@@ -819,7 +819,7 @@ class Component extends DCLogic {
       h1AccentStyle: { color: accent },
       h1EmStyle: { display: "block", fontStyle: "italic", fontWeight: 600, color: strong },
 
-      /* "Kurz über mich": large 4:5 portrait with a flat blue-grey block offset behind it, copy left, key facts underneath */
+      /* "Kurz über mich": large 4:5 portrait with a flat navy block offset behind it, copy left, key facts underneath */
       aboutSectionStyle: {
         display: "flex", flexDirection: "column", gap: m ? 32 : 56,
         padding: m ? "44px 24px 64px 24px" : "60px 72px 88px 72px", /* even section rhythm (~104-124px between blocks) */
@@ -838,11 +838,11 @@ class Component extends DCLogic {
         order: m ? 0 : 2,
       },
       aboutPhotoWrapStyle: { position: "relative", width: "100%", marginBottom: m ? 16 : 22 },
-      /* small caption under the photo, below the offset blue-grey block, left edge = photo edge */
+      /* small caption under the photo, below the offset navy block, left edge = photo edge */
       aboutCaptionStyle: { fontFamily: font, fontWeight: 400, fontSize: 14, lineHeight: 1.4, color: muted, marginTop: 12 },
       aboutPhotoBlockStyle: {
         position: "absolute", top: m ? 16 : 22, left: m ? 16 : 22, right: m ? -16 : -22, bottom: m ? -16 : -22,
-        backgroundColor: "var(--blue)", borderRadius: 16,
+        backgroundColor: "var(--ink-900)", borderRadius: 16, /* Kijimea navy behind the portrait */
       },
       aboutPhotoStyle: {
         position: "relative", display: "block", width: "100%", height: "auto",
