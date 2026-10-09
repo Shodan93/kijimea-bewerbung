@@ -91,8 +91,6 @@
     .footer-link { color: #ffffff; text-decoration: none; }
     .footer-link:hover { color: #ffffff; text-decoration: underline; text-decoration-color: #ffffff; text-underline-offset: 4px; }
     .footer-link:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
-    /* hero capsules: up to 1440px the blister bleeds off the screen edge; on wider screens the page ends mid-air, so the cut right edge fades out */
-    @media (min-width: 1441px) { .hero-pills { -webkit-mask-image: linear-gradient(to left, transparent 0, #000 12%); mask-image: linear-gradient(to left, transparent 0, #000 12%); } }
   </style>
 </helmet>
 <div style="{{ pageStyle }}">
@@ -110,7 +108,7 @@
         <p style="{{ heroLeadStyle }}">Was ich dafür mitbringe und wie ich es bei Kijimea umsetzen würde.</p>
       </div>
       <!-- Kijimea capsules spilling from a blister (cut-out PNG from the user, turned 10° clockwise and re-cut straight at top and right): desktop = the blister slides out from under the full-width header hairline
-           (crisp top edge on the line) and bleeds off the right edge, capsules fall into the white space beside the headline;
+           (crisp top edge on the line); its crisp right edge ends exactly where the hairline ends, so line + blister form one clean frame corner, also on screens wider than 1440px; capsules fall into the white space beside the headline;
            mobile = in the flow under the intro line, bleeding off the right edge, top edge softened (no line to sit on there) -->
       <img src="assets/kijimea-kapseln.webp" alt="" width="961" height="512" decoding="async" class="hero-pills" style="{{ heroPillsStyle }}" />
     </header>
