@@ -55,10 +55,11 @@
     a { color: var(--ink-900); text-decoration: underline; text-decoration-color: var(--blue); text-underline-offset: 3px; }
     a:hover { color: var(--ink-700); }
     html { scroll-behavior: smooth; }
-    .toc a:focus-visible { outline: 3px solid var(--ink-900); outline-offset: 3px; }
+    html, body { overflow-x: clip; } /* the hero band, navy bar and capsules bleed to the screen edge on wide screens without causing a scrollbar */
+    .toc a:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     .toc a { color: inherit; text-decoration: none; padding: 4px 0; }
-    .toc a:hover { color: var(--blue-ink); text-decoration: underline; text-decoration-color: var(--blue); }
+    .toc a:hover { color: #ffffff; text-decoration: underline; text-decoration-color: var(--blue); text-decoration-thickness: 2px; text-underline-offset: 6px; } /* white links on the navy bar, blue-grey underline on hover */
     [id] { scroll-margin-top: 24px; }
     .video-tile { cursor: pointer; }
     /* contact buttons: yellow = the only yellow on the page. Mail = solid yellow, phone = yellow outline; hover/focus = instant swap to white (no transition) */
@@ -99,7 +100,7 @@
 
     <header style="{{ heroStyle }}">
       <div style="{{ heroTopRowStyle }}">
-        <img src="assets/kijimea-logo.svg" alt="Kijimea" width="146" height="42" style="{{ heroLogoStyle }}" />
+        <img src="assets/kijimea-logo-weiss.svg" alt="Kijimea" width="132" height="38" style="{{ heroLogoStyle }}" />
         <nav aria-label="Inhalt" class="toc" style="{{ navStyle }}"><a href="#ueber-mich">Über mich</a><a href="#ai-projekte">AI-Projekte</a><a href="#skills">Skills</a><a href="#ansatz">Ansatz</a><a href="#einblicke">Mehr Einblicke</a><a href="#kontakt">Kontakt</a></nav>
       </div>
       <div style="{{ heroTextStyle }}">
@@ -107,9 +108,9 @@
         <h1 style="{{ h1Style }}"><span style="{{ h1AccentStyle }}">Prompts bauen.</span> Workflows automatisieren. <em style="{{ h1EmStyle }}">Content skalieren.</em></h1>
         <p style="{{ heroLeadStyle }}">Was ich dafür mitbringe und wie ich es bei Kijimea umsetzen würde.</p>
       </div>
-      <!-- Kijimea capsules spilling from a blister (cut-out PNG from the user, turned 10° clockwise and re-cut straight at top and right): desktop = the blister slides out from under the full-width header hairline
-           (crisp top edge on the line); its crisp right edge ends exactly where the hairline ends, so line + blister form one clean frame corner, also on screens wider than 1440px; capsules fall into the white space beside the headline;
-           mobile = in the flow under the intro line, bleeding off the right edge, top edge softened (no line to sit on there) -->
+      <!-- Kijimea capsules spilling from a blister (cut-out PNG from the user, turned 10° clockwise and re-cut straight at top and right): desktop = the blister slides out
+           from under the navy bar (crisp top edge) and runs off the screen edge (crisp right edge), like the phone under the nav on kijimea.de;
+           mobile = in the flow under the intro line, bleeding off the right edge, top edge softened (it does not touch the bar there) -->
       <img src="assets/kijimea-kapseln.webp" alt="" width="961" height="512" decoding="async" class="hero-pills" style="{{ heroPillsStyle }}" />
     </header>
 
@@ -766,43 +767,46 @@ class Component extends DCLogic {
         color: strong,
         display: "flex",
         flexDirection: "column",
-        overflow: "hidden",
+        overflow: "visible", /* was hidden: the hero band, navy bar and capsules now bleed to the screen edge on screens wider than 1440px (html/body clip the overflow) */
         width: "100%",
         maxWidth: 1440,
         margin: "0 auto",
       },
 
       heroIntroWrapStyle: { position: "relative" },
-      /* desktop: top edge sits exactly on the header hairline (32 padding + 42 logo row + 24 + 1px line = 99; top 98 tucks the first pixel row under the line) */
+      /* capsules: top edge tucked under the navy bar (82px bar, top 81), right edge on the screen edge (also wider than 1440px) */
       heroPillsStyle: m ? {
         display: "block", alignSelf: "flex-end", width: "74%", height: "auto",
-        margin: "-12px -24px -28px 0", pointerEvents: "none",
+        margin: "-8px -24px 0 0", pointerEvents: "none",
         WebkitMaskImage: "linear-gradient(to bottom, transparent 0, #000 20%)", maskImage: "linear-gradient(to bottom, transparent 0, #000 20%)",
       } : {
-        position: "absolute", zIndex: 0, top: 98, right: 0, pointerEvents: "none",
+        position: "absolute", zIndex: 0, top: 81, right: "min(0px, calc((1440px - 100vw) / 2))", pointerEvents: "none",
         width: "min(560px, 39vw)", height: "auto",
       },
-      /* Hero: header row (wordmark | nav), then kicker, two-tone headline and a calm intro line */
+      /* Hero modelled on kijimea.de: full-width navy bar (white logo + nav), below it a light blue-grey band with kicker, headline, intro and the capsules.
+         Both bands bleed to the screen edge via box-shadow + clip-path, so the 1440px page frame never shows as a hard edge on wide screens. */
       heroStyle: {
         position: "relative", zIndex: 1,
         display: "flex", flexDirection: "column",
-        gap: m ? 40 : 56, /* desktop: 24px row padding + line + 56 = same text position as before */
-        padding: m ? "26px 24px 4px 24px" : "32px 72px 16px 72px",
+        gap: m ? 36 : 64,
+        padding: m ? "0 24px 32px 24px" : "0 72px 72px 72px",
+        backgroundColor: "var(--surface-sunken)",
+        boxShadow: "0 0 0 100vmax var(--surface-sunken)", clipPath: "inset(0 -100vmax)",
       },
       heroTopRowStyle: {
         display: "flex", flexDirection: m ? "column" : "row", flexWrap: "wrap",
         alignItems: m ? "flex-start" : "center", justifyContent: "space-between",
-        gap: m ? 20 : 24, position: "relative", zIndex: 1,
-        /* desktop: full-width hairline under logo + nav, the edge the capsule blister comes out from under */
-        margin: m ? 0 : "0 -72px", padding: m ? 0 : "0 72px 24px 72px",
-        borderBottom: m ? "none" : "1px solid var(--border-subtle)",
+        gap: m ? 16 : 24, position: "relative", zIndex: 1,
+        margin: m ? "0 -24px" : "0 -72px", padding: m ? "18px 24px 16px 24px" : "22px 72px",
+        backgroundColor: "var(--ink-900)",
+        boxShadow: "0 0 0 100vmax var(--ink-900)", clipPath: "inset(0 -100vmax)",
       },
       /* company logo top left (as on the Mehr Ampere / AkuRat pages); the user's own wordmark lives in the footer */
-      heroLogoStyle: { display: "block", height: m ? 32 : 42, width: "auto" },
+      heroLogoStyle: { display: "block", height: m ? 30 : 38, width: "auto" }, /* desktop bar: 22 + 38 + 22 = 82px */
       navStyle: {
         display: "flex", flexWrap: "wrap", gap: m ? "6px 18px" : "8px 36px",
-        fontFamily: font, fontWeight: 500, fontSize: m ? 15 : 16, lineHeight: 1.4,
-        color: strong,
+        fontFamily: font, fontWeight: 500, fontSize: m ? 15 : 17, lineHeight: 1.4,
+        color: "#ffffff", /* white on navy 12:1 */
       },
       heroTextStyle: { position: "relative", zIndex: 1, display: "flex", flexDirection: "column", gap: m ? 14 : 22, maxWidth: m ? 1200 : "calc(100% - min(560px, 39vw) + 72px)" }, /* desktop: text column stops where the capsules begin */
       heroLeadStyle: {
