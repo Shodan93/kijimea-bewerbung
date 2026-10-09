@@ -1,0 +1,10 @@
+{
+  "name": "kijimea-bewerbung",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./"
+  },
+  "routes": [
+    { "pattern": "kijimea-bewerbung.mumelter.org", "custom_domain": true }
+  ]
+}

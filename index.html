@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<title>Svenja Mumelter – Bewerbung Senior Manager AI Content</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    /* Design tokens mirrored from kijimea.de (Shopify theme CSS):
+       Open Sans for headings and body, navy #1c3660 ink, blue-grey #6a92aa (the capsule colour) for fills/decoration,
+       light blue-grey surface #f0f4f6, body text #48494b, small corner radii like the Kijimea tiles.
+       #6a92aa is too light for small text (3.0:1 on the surface), so text accents use two darker blue-greys:
+       --blue-display (>= 3:1, large headlines/numbers only) and --blue-ink (>= 4.5:1, small text + line icons).
+       To restyle: change the blue tokens and the #456f89 / #6a92aa SVG colours in the markup. */
+    :root {
+      --ink-900:#1c3660; --ink-800:#2a4470; --ink-700:#48494b; --ink-600:#5f6368; --ink-200:#d9e2e8; --ink-50:#f0f4f6;
+      --paper:#ffffff; --white:#ffffff;
+      --blue:#6a92aa; /* Kijimea blue-grey: fills, photo block, swooshes, bullets */
+      --blue-display:#55809a; /* large headline accents (3.8:1 on the surface) */
+      --blue-ink:#456f89; /* small text, labels, line icons (4.9:1 on the surface) */
+      --navy-deep:#142a4d; /* footer panel behind the white contact links */
+      --yellow:#ffca2e; /* Kijimea CTA yellow: the page's single eye-catcher, used only in the contact card */
+      --surface-page:var(--paper); --surface-sunken:var(--ink-50);
+      --text-primary:var(--ink-900); --text-secondary:var(--ink-600); --text-on-accent:var(--white);
+      --accent-primary:var(--blue-display); --accent-primary-hover:var(--ink-900);
+      --border-subtle:var(--ink-200);
+      --font-display:'Open Sans',-apple-system,Helvetica,Arial,sans-serif;
+      --font-body:'Open Sans',-apple-system,Helvetica,Arial,sans-serif;
+      --font-headline:'Open Sans',-apple-system,Helvetica,Arial,sans-serif;
+      --lh-tight:1.1; --ls-tight:-0.015em; --ls-wide:0.1em;
+      /* Typography scale (desktop). --type-scale is one global knob for all sizes except the hero headline. */
+      --type-scale:1; /* kept at 1: all sizes are whole pixels (QA 2026-10-06) */
+      --fs-hero-title:44px; --fs-hero-lead:calc(18px * var(--type-scale)); --fs-hero-text:calc(17px * var(--type-scale));
+      --fs-label:calc(13px * var(--type-scale)); --fs-case-title:calc(40px * var(--type-scale)); --fs-case-sub:calc(18px * var(--type-scale));
+      --fs-body:calc(17px * var(--type-scale)); --fs-bullet:calc(17px * var(--type-scale)); --fs-caption:calc(14px * var(--type-scale)); --fs-button:calc(14px * var(--type-scale)); --fs-link:calc(14px * var(--type-scale));
+    }
+    /* Typography scale (mobile, same breakpoint as the page logic) */
+    @media (max-width: 859px) {
+      :root {
+        --fs-hero-title:min(30px, calc((100vw - 48px) / 10.5)); --fs-hero-lead:calc(17px * var(--type-scale)); --fs-hero-text:calc(16px * var(--type-scale));
+        --fs-label:calc(12px * var(--type-scale)); --fs-case-title:calc(32px * var(--type-scale)); --fs-case-sub:calc(17px * var(--type-scale));
+        --fs-body:calc(16px * var(--type-scale)); --fs-bullet:calc(16px * var(--type-scale)); --fs-caption:calc(14px * var(--type-scale)); --fs-button:calc(14px * var(--type-scale)); --fs-link:calc(14px * var(--type-scale));
+      }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--surface-page); -webkit-font-smoothing: antialiased; }
+    a { color: var(--ink-900); text-decoration: underline; text-decoration-color: var(--blue); text-underline-offset: 3px; }
+    a:hover { color: var(--ink-700); }
+    html { scroll-behavior: smooth; }
+    .toc a:focus-visible { outline: 3px solid var(--ink-900); outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    .toc a { color: inherit; text-decoration: none; padding: 4px 0; }
+    .toc a:hover { color: var(--blue-ink); text-decoration: underline; text-decoration-color: var(--blue); }
+    [id] { scroll-margin-top: 24px; }
+    .video-tile { cursor: pointer; }
+    /* contact buttons: yellow = the only yellow on the page. Mail = solid yellow, phone = yellow outline; hover/focus = instant swap to white (no transition) */
+    .cta-mail:hover, .cta-mail:focus-visible { background-color: #ffffff !important; border-color: #ffffff !important; }
+    .cta-phone:hover, .cta-phone:focus-visible { background-color: var(--yellow) !important; color: var(--ink-900) !important; border-color: var(--yellow) !important; }
+    .cta-mail:focus-visible, .cta-phone:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
+    .btn-pill:hover, .btn-pill:focus-visible { background-color: var(--blue) !important; color: var(--ink-900) !important; }
+    .btn-pill:focus-visible { outline: 3px solid var(--ink-900); outline-offset: 3px; }
+    /* preview hover: the blue-grey play button turns white, instantly */
+    .video-tile:hover .vt-play, .video-tile:focus-visible .vt-play { background-color: #ffffff !important; }
+    /* AI project cards: the whole card is one button (stretched ::after); hover = instant blue-grey border, hint underlined */
+    .ai-card-click:hover { border-color: var(--blue) !important; }
+    .ai-card-click:hover .ai-card-hint { text-decoration: underline; text-decoration-color: var(--blue); text-underline-offset: 4px; }
+    .card-stretch::after { content: ""; position: absolute; inset: 0; z-index: 2; border-radius: 16px; } /* above the positioned bullets/preview, so a click anywhere on the card opens it */
+    .card-stretch:focus-visible { outline: none; }
+    .card-stretch:focus-visible::after { outline: 3px solid var(--ink-900); outline-offset: 3px; }
+    /* big project cards: one-liner and bullets stay on ONE line on desktop; on narrower desktops the size steps down in whole pixels (text unchanged) */
+    @media (min-width: 860px) and (max-width: 1459px) { .proj-oneliner { font-size: 16px !important; } }
+    @media (min-width: 860px) and (max-width: 1389px) { .proj-oneliner { font-size: 15px !important; } .proj-bullets li, .more-text { font-size: 14px !important; } }
+    .proj-bullets li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
+    /* project overlay: dimmed page, white close/arrow buttons swap to blue-grey instantly */
+    #proj-dialog::backdrop { background: rgba(12, 24, 44, 0.8); }
+    .dialog-close:hover, .dialog-close:focus-visible, .dlg-arrow:hover, .dlg-arrow:focus-visible { background-color: var(--blue) !important; color: var(--ink-900) !important; }
+    .dialog-close:focus-visible, .dlg-arrow:focus-visible, .dlg-dot:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
+    /* small utility links under the walkthrough CTA */
+    .util-link:hover { color: var(--ink-700) !important; text-decoration-color: var(--ink-900) !important; }
+    .util-link:focus-visible { outline: 2px solid var(--ink-900); outline-offset: 3px; }
+    .video-tile:focus-visible { outline: 3px solid var(--ink-900); outline-offset: 3px; }
+    /* footer links: white on the deep-navy panel (14.3:1), underline on hover, no transition */
+    .footer-link { color: #ffffff; text-decoration: none; }
+    .footer-link:hover { color: #ffffff; text-decoration: underline; text-decoration-color: #ffffff; text-underline-offset: 4px; }
+    .footer-link:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
+  </style>
+</helmet>
+<div style="{{ pageStyle }}">
+
+  <div style="{{ heroIntroWrapStyle }}">
+    <!-- decorative flat blue-grey circles, a quiet nod to the microbiome / capsule motif on kijimea.de (no gradient) -->
+    <svg style="{{ swooshStyle }}" viewBox="0 0 900 560" preserveAspectRatio="xMaxYMin slice" aria-hidden="true" focusable="false">
+      <circle cx="720" cy="170" r="210" fill="none" stroke="#6a92aa" stroke-width="2" opacity="0.18"></circle>
+      <circle cx="720" cy="170" r="150" fill="#6a92aa" opacity="0.10"></circle>
+      <circle cx="850" cy="40" r="92" fill="#6a92aa" opacity="0.08"></circle>
+      <circle cx="560" cy="330" r="58" fill="#6a92aa" opacity="0.09"></circle>
+      <circle cx="868" cy="330" r="38" fill="#4a7590" opacity="0.10"></circle>
+      <circle cx="610" cy="70" r="22" fill="#6a92aa" opacity="0.16"></circle>
+      <circle cx="470" cy="190" r="13" fill="#6a92aa" opacity="0.18"></circle>
+      <circle cx="770" cy="430" r="17" fill="#6a92aa" opacity="0.14"></circle>
+      <circle cx="420" cy="60" r="8" fill="#4a7590" opacity="0.16"></circle>
+    </svg>
+
+    <header style="{{ heroStyle }}">
+      <div style="{{ heroTopRowStyle }}">
+        <img src="assets/kijimea-logo.svg" alt="Kijimea" width="146" height="42" style="{{ heroLogoStyle }}" />
+        <nav aria-label="Inhalt" class="toc" style="{{ navStyle }}"><a href="#ueber-mich">Über mich</a><a href="#ai-projekte">AI-Projekte</a><a href="#skills">Skills</a><a href="#ansatz">Ansatz</a><a href="#einblicke">Mehr Einblicke</a><a href="#kontakt">Kontakt</a></nav>
+      </div>
+      <div style="{{ heroTextStyle }}">
+        <p style="{{ heroKickerStyle }}">Svenja Mumelter · Bewerbung als Senior Manager AI Content</p>
+        <h1 style="{{ h1Style }}"><span style="{{ h1AccentStyle }}">Prompts bauen.</span> Workflows automatisieren. <em style="{{ h1EmStyle }}">Content skalieren.</em></h1>
+        <p style="{{ heroLeadStyle }}">Was ich dafür mitbringe und wie ich es bei Kijimea umsetzen würde.</p>
+      </div>
+    </header>
+
+    <section id="ueber-mich" aria-label="Kurz über mich" style="{{ aboutSectionStyle }}">
+      <div style="{{ aboutStyle }}">
+        <figure style="{{ aboutFigureStyle }}">
+          <div style="{{ aboutPhotoWrapStyle }}">
+            <div style="{{ aboutPhotoBlockStyle }}" aria-hidden="true"></div>
+            <img src="assets/svenja-portrait-kijimea.jpg" alt="Svenja Mumelter" width="880" height="1100" style="{{ aboutPhotoStyle }}" />
+          </div>
+          <figcaption style="{{ aboutCaptionStyle }}">Svenja Mumelter · München</figcaption>
+        </figure>
+        <div style="{{ aboutTextStyle }}">
+          <span style="{{ sectionLabelStyle }}">Kurz über mich</span>
+          <span style="{{ aboutQuoteMarkStyle }}" aria-hidden="true"><span style="{{ aboutQuoteGlyphStyle }}">„</span></span>
+          <p style="{{ aboutLeadStyle }}">„Zusammen mit einem Partner habe ich einen Onlineshop von Grund auf aufgebaut und fünf Jahre lang neben meinem Hauptjob betrieben, vom Shopsystem über Lager und Versand bis zur Buchhaltung. Den gesamten visuellen Auftritt habe ich verantwortet, von Branding und Produktfotografie über die Shopgestaltung bis zu allen Werbemitteln. Darüber hinaus war ich an allem beteiligt, von Performance Marketing mit Google und Meta Ads über Newsletter und CRM bis zu A/B-Tests und SEO-Optimierung der Produktseiten. Hauptberuflich war ich Filial- und Studioleiterin in einem Fotofachgeschäft. Dabei war ich für Einkauf, Umsatz und Marge verantwortlich und habe ein kleines Team geführt.“</p>
+          <p style="{{ aboutBodyStyle }}">Nach dem Aus meines langjährigen Arbeitgebers habe ich die Zeit genutzt und alles, was ich mir im Shop selbst beigebracht hatte, in einer Vollzeitweiterbildung gezielt vertieft, mit Fokus auf datengetriebenes Marketing und AI. Die meisten Dozenten waren selbst Unternehmer und haben ihre Themen hochaktuell aus der Praxis vermittelt. Seitdem nutze ich AI jeden Tag, ein paar Ergebnisse davon seht ihr weiter unten.</p>
+        </div>
+      </div>
+      <dl style="{{ factsStyle }}">
+        <div style="{{ factStyle }}"><dt style="{{ factNumStyle }}">5&nbsp;Jahre</dt><dd style="{{ factTextStyle }}">eigener Onlineshop als Mitgründerin</dd></div>
+        <div style="{{ factStyle }}"><dt style="{{ factNumStyle }}">10+&nbsp;Jahre</dt><dd style="{{ factTextStyle }}">im selben Unternehmen, bis zur Filial- und Studioleitung</dd></div>
+        <div style="{{ factStyle }}"><dt style="{{ factNumStyle }}">96&nbsp;%</dt><dd style="{{ factTextStyle }}">Abschlussergebnis als Applied E&#8209;Commerce Managerin</dd></div>
+      </dl>
+      <aside aria-label="Mein Bezug zur Stelle" style="{{ bezugStyle }}">
+        <span style="{{ bezugLabelStyle }}">Mein Bezug zur Stelle</span>
+        <p style="{{ bezugTextStyle }}">Bildsprache habe ich von Grund auf <em style="{{ bezugEmStyle }}">gelernt.</em> Als Fotomedienfachfrau und Grafikdesignerin sehe ich schnell, ob ein Bild zu Marke, Kanal und Zielgruppe passt, egal ob fotografiert oder mit AI generiert.</p>
+      </aside>
+    </section>
+
+    <section id="ai-projekte" aria-labelledby="ai-title" style="{{ aiStyle }}">
+      <div style="{{ skillsHeadStyle }}">
+        <span style="{{ sectionLabelStyle }}">Eigene Projekte</span>
+        <h2 id="ai-title" style="{{ introH2Style }}"><span style="{{ h2AccentStyle }}">Ein paar meiner</span> <em style="{{ h2EmStyle }}">AI-Projekte</em></h2>
+        <p style="{{ approachLeadStyle }}">Neue Ideen habe ich fast jede Woche. Diese hier habe ich umgesetzt, alle selbst gebaut per Vibe Coding.</p>
+      </div>
+      <div style="{{ aiWrapStyle }}">
+        <div style="{{ aiBgStyle }}" aria-hidden="true"></div>
+        <div style="{{ aiStackStyle }}">
+          <!-- Teil 1: three big project cards, each opens its own gallery -->
+          <ul style="{{ projGridStyle }}">
+            <sc-for list="{{ bigProjects }}" as="p">
+              <li class="{{ p.cls }}" style="{{ p.cardStyle }}">
+                <sc-if value="{{ p.ready }}"><div style="{{ projPreviewStyle }}"><img src="{{ p.preview }}" alt="" loading="lazy" decoding="async" style="{{ p.previewImgStyle }}" /></div></sc-if>
+                <div style="{{ projBodyStyle }}">
+                  <h3 style="{{ projTitleStyle }}"><sc-if value="{{ p.ready }}"><button type="button" class="card-stretch" aria-haspopup="dialog" onClick="{{ p.open }}" style="{{ cardStretchBtnStyle }}">{{ p.title }}</button></sc-if><sc-if value="{{ !p.ready }}">{{ p.title }}</sc-if></h3>
+                  <p class="proj-oneliner" style="{{ projOneLinerStyle }}">{{ p.oneliner }}</p>
+                  <ul class="proj-bullets" style="{{ projBulletsStyle }}"><sc-for list="{{ p.bullets }}" as="b"><li style="{{ projBulletStyle }}">{{ b }}</li></sc-for></ul>
+                  <sc-if value="{{ p.ready }}"><span class="ai-card-hint" aria-hidden="true" style="{{ aiHintStyle }}">Screenshots ansehen</span></sc-if>
+                </div>
+              </li>
+            </sc-for>
+          </ul>
+
+          <!-- Teil 2: Orbit + Keyboard, two identically built cards side by side (stacked on mobile) -->
+          <ul style="{{ duoGridStyle }}">
+            <sc-for list="{{ duoProjects }}" as="q">
+              <li class="ai-card-click" style="{{ duoCardStyle }}">
+                <div style="{{ duoPreviewStyle }}"><img src="{{ q.preview }}" alt="" loading="lazy" decoding="async" style="{{ q.previewImgStyle }}" /></div>
+                <div style="{{ projBodyStyle }}">
+                  <h3 style="{{ projTitleStyle }}"><button type="button" class="card-stretch" aria-haspopup="dialog" onClick="{{ q.open }}" style="{{ cardStretchBtnStyle }}">{{ q.title }}</button></h3>
+                  <p style="{{ projOneLinerStyle }}">{{ q.p1 }}</p>
+                  <p style="{{ duoNoteStyle }}">{{ q.p2 }}</p>
+                  <span class="ai-card-hint" aria-hidden="true" style="{{ aiHintStyle }}">{{ q.hint }}</span>
+                </div>
+              </li>
+            </sc-for>
+          </ul>
+
+          <!-- Teil 3: compact tiles, no overlay -->
+          <div style="{{ moreWrapStyle }}">
+            <h3 style="{{ moreHeadStyle }}">Außerdem gebaut</h3>
+            <ul style="{{ moreGridStyle }}">
+              <sc-for list="{{ moreProjects }}" as="x">
+                <li style="{{ x.cardStyle }}">
+                  <h4 style="{{ x.titleStyle }}">{{ x.title }}</h4>
+                  <p class="more-text" style="{{ x.textStyle }}">{{ x.text }}</p>
+                </li>
+              </sc-for>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- one overlay for all projects: native <dialog> (Esc, focus trap); gallery nav only when a project has several images -->
+      <dialog id="proj-dialog" aria-labelledby="proj-dialog-title" onClick="{{ onDialogBackdrop }}" style="{{ dlgStyle }}">
+        <div style="{{ dlgBarStyle }}">
+          <p id="proj-dialog-title" style="{{ dlgTitleStyle }}">{{ dlgTitle }} <span style="{{ dlgCountStyle }}">{{ dlgCount }}</span></p>
+          <button type="button" class="dialog-close" aria-label="Schließen" onClick="{{ closeGallery }}" style="{{ dlgCloseStyle }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+        </div>
+        <div id="proj-stage" style="{{ dlgStageStyle }}">
+          <sc-if value="{{ dlgMulti }}"><button type="button" class="dlg-arrow" aria-label="Vorheriges Bild" onClick="{{ prevSlide }}" style="{{ dlgArrowStyle }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg></button></sc-if>
+          <div style="{{ dlgFrameAreaStyle }}">
+            <sc-if value="{{ dlgOpen }}">
+              <div style="{{ slide.frameStyle }}">
+                <sc-if value="{{ slide.isBrowser }}"><div style="{{ browserBarStyle }}" aria-hidden="true"><span style="{{ browserDotStyle }}"></span><span style="{{ browserDotStyle }}"></span><span style="{{ browserDotStyle }}"></span></div></sc-if>
+                <img src="{{ slide.src }}" alt="{{ slide.alt }}" decoding="async" style="{{ slide.imgStyle }}" />
+              </div>
+            </sc-if>
+          </div>
+          <sc-if value="{{ dlgMulti }}"><button type="button" class="dlg-arrow" aria-label="Nächstes Bild" onClick="{{ nextSlide }}" style="{{ dlgArrowStyle }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg></button></sc-if>
+        </div>
+        <p style="{{ dlgCaptionStyle }}" aria-live="polite">{{ slide.caption }}</p>
+        <sc-if value="{{ dlgMulti }}">
+          <div style="{{ dotsStyle }}">
+            <sc-for list="{{ dots }}" as="d"><button type="button" class="dlg-dot" aria-label="{{ d.label }}" aria-current="{{ d.current }}" onClick="{{ d.go }}" style="{{ dotBtnStyle }}"><span style="{{ d.dotStyle }}"></span></button></sc-for>
+          </div>
+        </sc-if>
+      </dialog>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-title" style="{{ skillsSectionStyle }}">
+      <div style="{{ skillsHeadStyle }}">
+        <span style="{{ sectionLabelStyle }}">Skills und Tools</span>
+        <h2 id="skills-title" style="{{ introH2Style }}"><span style="{{ h2AccentStyle }}">Das bringe ich</span> <em style="{{ h2EmStyle }}">mit.</em></h2>
+      </div>
+      <div style="{{ toolGroupsStyle }}">
+          <div style="{{ toolGroupStyle }}">
+            <h3 style="{{ toolGroupTitleStyle }}">AI und <em style="{{ toolGroupEmStyle }}">Automatisierung</em></h3>
+            <ul style="{{ toolsListStyle }}"><li style="{{ toolChipStyle }}">ChatGPT</li><li style="{{ toolChipStyle }}">Codex</li><li style="{{ toolChipStyle }}">Claude</li><li style="{{ toolChipStyle }}">Claude Code</li><li style="{{ toolChipStyle }}">Gemini</li><li style="{{ toolChipStyle }}">Perplexity</li><li style="{{ toolChipStyle }}">n8n</li><li style="{{ toolChipStyle }}">Eigene MCP-Server</li><li style="{{ toolChipStyle }}">Claude Skills</li></ul>
+          </div>
+          <div style="{{ toolGroupStyle }}">
+            <h3 style="{{ toolGroupTitleStyle }}">Bild und <em style="{{ toolGroupEmStyle }}">Gestaltung</em></h3>
+            <ul style="{{ toolsListStyle }}"><li style="{{ toolChipStyle }}">Produktfotografie</li><li style="{{ toolChipStyle }}">Bildsprache</li><li style="{{ toolChipStyle }}">Branding</li><li style="{{ toolChipStyle }}">Shopgestaltung</li><li style="{{ toolChipStyle }}">Werbemittel</li><li style="{{ toolChipStyle }}">Figma</li></ul>
+          </div>
+          <div style="{{ toolGroupStyle }}">
+            <h3 style="{{ toolGroupTitleStyle }}">Content, SEO und <em style="{{ toolGroupEmStyle }}">GEO</em></h3>
+            <ul style="{{ toolsListStyle }}"><li style="{{ toolChipStyle }}">Content-Strategie</li><li style="{{ toolChipStyle }}">Search Console</li><li style="{{ toolChipStyle }}">Sistrix</li><li style="{{ toolChipStyle }}">Semrush</li><li style="{{ toolChipStyle }}">Ahrefs</li><li style="{{ toolChipStyle }}">Screaming Frog</li><li style="{{ toolChipStyle }}">PageSpeed Insights</li><li style="{{ toolChipStyle }}">AnswerThePublic</li></ul>
+          </div>
+          <div style="{{ toolGroupStyle }}">
+            <h3 style="{{ toolGroupTitleStyle }}">Newsletter und <em style="{{ toolGroupEmStyle }}">CRM</em></h3>
+            <ul style="{{ toolsListStyle }}"><li style="{{ toolChipStyle }}">Brevo</li><li style="{{ toolChipStyle }}">Salesforce</li><li style="{{ toolChipStyle }}">Salesforce Marketing Cloud</li><li style="{{ toolChipStyle }}">Segmentierung</li><li style="{{ toolChipStyle }}">Lead Scoring</li><li style="{{ toolChipStyle }}">A/B-Testing</li></ul>
+          </div>
+          <div style="{{ toolGroupStyle }}">
+            <h3 style="{{ toolGroupTitleStyle }}">Performance <em style="{{ toolGroupEmStyle }}">Marketing</em></h3>
+            <ul style="{{ toolsListStyle }}"><li style="{{ toolChipStyle }}">Google Ads</li><li style="{{ toolChipStyle }}">Meta Ads</li><li style="{{ toolChipStyle }}">Performance Max</li><li style="{{ toolChipStyle }}">Advantage+</li><li style="{{ toolChipStyle }}">Gebotsstrategien</li><li style="{{ toolChipStyle }}">Conversion-Tracking</li><li style="{{ toolChipStyle }}">Remarketing</li><li style="{{ toolChipStyle }}">Consent Mode V2</li></ul>
+          </div>
+          <div style="{{ toolGroupStyle }}">
+            <h3 style="{{ toolGroupTitleStyle }}">Webanalyse und <em style="{{ toolGroupEmStyle }}">Tracking</em></h3>
+            <ul style="{{ toolsListStyle }}"><li style="{{ toolChipStyle }}">GA4</li><li style="{{ toolChipStyle }}">Google Tag Manager</li><li style="{{ toolChipStyle }}">Looker Studio</li><li style="{{ toolChipStyle }}">Microsoft Clarity</li><li style="{{ toolChipStyle }}">Event-Tracking</li><li style="{{ toolChipStyle }}">DSGVO-konformes Tracking</li></ul>
+          </div>
+          <div style="{{ toolGroupStyle }}">
+            <h3 style="{{ toolGroupTitleStyle }}">Online-Marketing-<em style="{{ toolGroupEmStyle }}">Strategie</em></h3>
+            <ul style="{{ toolsListStyle }}"><li style="{{ toolChipStyle }}">Personas</li><li style="{{ toolChipStyle }}">Customer Journey</li><li style="{{ toolChipStyle }}">Business Model Canvas</li><li style="{{ toolChipStyle }}">SWOT-Analyse</li><li style="{{ toolChipStyle }}">KPI-Definition</li><li style="{{ toolChipStyle }}">Kampagnenplanung</li><li style="{{ toolChipStyle }}">Budgetplanung</li></ul>
+          </div>
+          <div style="{{ toolGroupStyle }}">
+            <h3 style="{{ toolGroupTitleStyle }}">Entwicklung und <em style="{{ toolGroupEmStyle }}">Hosting</em></h3>
+            <ul style="{{ toolsListStyle }}"><li style="{{ toolChipStyle }}">Vibe Coding</li><li style="{{ toolChipStyle }}">GitHub</li><li style="{{ toolChipStyle }}">Cloudflare</li><li style="{{ toolChipStyle }}">Supabase</li><li style="{{ toolChipStyle }}">Raspberry Pi</li></ul>
+          </div>
+      </div>
+    </section>
+
+    <section id="ansatz" aria-labelledby="ansatz-title" style="{{ introStyle }}" data-section="intro">
+      <!-- soft brush arc top right (generated, seeded), recoloured to the Kijimea blue-greys; masked so it fades out to the left -->
+      <svg style="{{ ansatzSwooshStyle }}" viewBox="0 0 700 520" preserveAspectRatio="xMaxYMin slice" fill="none" aria-hidden="true" focusable="false">
+        <defs>
+          <filter id="brushSoft" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="2.2"></feGaussianBlur></filter>
+          <linearGradient id="brushFadeGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"></stop><stop offset="0.45" stop-color="#fff" stop-opacity="0.85"></stop><stop offset="1" stop-color="#fff" stop-opacity="1"></stop></linearGradient>
+          <mask id="brushFade"><rect width="700" height="520" fill="url(#brushFadeGrad)"></rect></mask>
+          <linearGradient id="brushFadeGradV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="1"></stop><stop offset="0.6" stop-color="#fff" stop-opacity="1"></stop><stop offset="1" stop-color="#fff" stop-opacity="0"></stop></linearGradient>
+          <mask id="brushFadeV"><rect width="700" height="520" fill="url(#brushFadeGradV)"></rect></mask>
+        </defs>
+        <g mask="url(#brushFadeV)"><g mask="url(#brushFade)"><g filter="url(#brushSoft)">
+          <circle cx="150" cy="700" r="650" stroke="#4a7590" stroke-width="30" stroke-opacity="0.08"></circle>
+          <circle cx="150" cy="700" r="650" stroke="#4a7590" stroke-width="10" stroke-opacity="0.08"></circle>
+          <circle cx="150" cy="700" r="655" stroke="#4a7590" stroke-width="28" stroke-opacity="0.03"></circle>
+          <circle cx="150" cy="700" r="621" stroke="#6a92aa" stroke-width="20" stroke-opacity="0.08"></circle>
+          <circle cx="150" cy="700" r="687" stroke="#4a7590" stroke-width="33" stroke-opacity="0.09"></circle>
+          <circle cx="150" cy="700" r="691" stroke="#4a7590" stroke-width="24" stroke-opacity="0.07"></circle>
+          <circle cx="150" cy="700" r="726" stroke="#6a92aa" stroke-width="6" stroke-opacity="0.04"></circle>
+          <circle cx="150" cy="700" r="608" stroke="#6a92aa" stroke-width="27" stroke-opacity="0.05"></circle>
+          <circle cx="150" cy="700" r="678" stroke="#4a7590" stroke-width="20" stroke-opacity="0.07"></circle>
+          <circle cx="150" cy="700" r="660" stroke="#6a92aa" stroke-width="18" stroke-opacity="0.04"></circle>
+          <circle cx="150" cy="700" r="760" stroke="#6a92aa" stroke-width="25" stroke-opacity="0.05"></circle>
+          <circle cx="150" cy="700" r="606" stroke="#7fa3b9" stroke-width="5" stroke-opacity="0.06"></circle>
+          <circle cx="150" cy="700" r="582" stroke="#6a92aa" stroke-width="29" stroke-opacity="0.05"></circle>
+          <circle cx="150" cy="700" r="752" stroke="#6a92aa" stroke-width="10" stroke-opacity="0.09"></circle>
+          <circle cx="150" cy="700" r="570" stroke="#a9c2d1" stroke-width="33" stroke-opacity="0.05"></circle>
+          <circle cx="150" cy="700" r="575" stroke="#4a7590" stroke-width="27" stroke-opacity="0.04"></circle>
+          <circle cx="150" cy="700" r="577" stroke="#7fa3b9" stroke-width="4" stroke-opacity="0.05"></circle>
+          <circle cx="150" cy="700" r="745" stroke="#4a7590" stroke-width="11" stroke-opacity="0.03"></circle>
+          <circle cx="150" cy="700" r="572" stroke="#a9c2d1" stroke-width="9" stroke-opacity="0.06"></circle>
+          <circle cx="150" cy="700" r="649" stroke="#4a7590" stroke-width="34" stroke-opacity="0.08"></circle>
+          <circle cx="150" cy="700" r="644" stroke="#a9c2d1" stroke-width="7" stroke-opacity="0.05"></circle>
+          <circle cx="150" cy="700" r="603" stroke="#7fa3b9" stroke-width="30" stroke-opacity="0.09"></circle>
+          <circle cx="150" cy="700" r="679" stroke="#6a92aa" stroke-width="10" stroke-opacity="0.05"></circle>
+          <circle cx="150" cy="700" r="731" stroke="#4a7590" stroke-width="7" stroke-opacity="0.09"></circle>
+          <circle cx="150" cy="700" r="603" stroke="#7fa3b9" stroke-width="4" stroke-opacity="0.06"></circle>
+          <circle cx="150" cy="700" r="726" stroke="#a9c2d1" stroke-width="6" stroke-opacity="0.03"></circle>
+          <circle cx="150" cy="700" r="677" stroke="#4a7590" stroke-width="4" stroke-opacity="0.05"></circle>
+          <circle cx="150" cy="700" r="684" stroke="#4a7590" stroke-width="33" stroke-opacity="0.06"></circle>
+          <circle cx="150" cy="700" r="675" stroke="#a9c2d1" stroke-width="9" stroke-opacity="0.04"></circle>
+          <circle cx="150" cy="700" r="742" stroke="#4a7590" stroke-width="11" stroke-opacity="0.04"></circle>
+          <circle cx="150" cy="700" r="708" stroke="#4a7590" stroke-width="10" stroke-opacity="0.09"></circle>
+          <circle cx="150" cy="700" r="736" stroke="#4a7590" stroke-width="6" stroke-opacity="0.03"></circle>
+          <circle cx="150" cy="700" r="582" stroke="#4a7590" stroke-width="33" stroke-opacity="0.04"></circle>
+          <circle cx="150" cy="700" r="701" stroke="#7fa3b9" stroke-width="17" stroke-opacity="0.08"></circle>
+          <circle cx="150" cy="700" r="658" stroke="#4a7590" stroke-width="9" stroke-opacity="0.07"></circle>
+          <circle cx="150" cy="700" r="574" stroke="#4a7590" stroke-width="18" stroke-opacity="0.07"></circle>
+          <circle cx="150" cy="700" r="683" stroke="#6a92aa" stroke-width="12" stroke-opacity="0.08"></circle>
+          <circle cx="150" cy="700" r="601" stroke="#6a92aa" stroke-width="6" stroke-opacity="0.05"></circle>
+          <circle cx="150" cy="700" r="610" stroke="#6a92aa" stroke-width="9" stroke-opacity="0.05"></circle>
+          <circle cx="150" cy="700" r="674" stroke="#4a7590" stroke-width="7" stroke-opacity="0.03"></circle>
+        </g></g></g>
+      </svg>
+      <div style="{{ skillsHeadStyle }}">
+        <p style="{{ ansatzQuoteStyle }}">„So würde ich bei euch starten.“</p>
+        <h2 id="ansatz-title" style="{{ introH2Style }}"><span style="{{ h2AccentStyle }}">Von der ersten Idee</span> bis zum <em style="{{ h2EmStyle }}">skalierbaren Content.</em></h2>
+        <p style="{{ approachLeadStyle }}">Kijimea will bis 2028 die weltweit größte DTC-Probiotikamarke werden. Dafür braucht es viel Content für viele Kanäle, fachlich korrekt und im Ton der Marke. AI macht das skalierbar, wenn Prozesse, Prompts und Qualitätssicherung stimmen. Genau dort setze ich an:</p>
+      </div>
+      <div style="{{ stepsWrapStyle }}">
+        <div style="{{ stepsGridBgStyle }}" aria-hidden="true"></div>
+        <ol style="{{ stepsStyle }}">
+          <li style="{{ stepStyle }}">
+            <span style="{{ stepNumStyle }}" aria-hidden="true">01.</span>
+            <span style="{{ stepChipStyle }}" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 48 48" fill="none" stroke="#456f89" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="14"></circle><path d="m31 31 12 12"></path></svg></span>
+            <h3 style="{{ skillTitleStyle }}">Prozess verstehen. <em style="{{ skillTitleEmStyle }}">Use Cases und AI-first-Strategie</em></h3>
+            <p style="{{ skillTextStyle }}">Den bestehenden Content-Prozess mit dem Team durchgehen, von Themenfindung und Recherche bis zur Distribution, und die Stellen finden, an denen AI am meisten bringt. Daraus entsteht eine AI-first-Roadmap, die mit schnellen, sichtbaren Ergebnissen startet.</p>
+          </li>
+          <li style="{{ stepStyle }}">
+            <span style="{{ stepNumStyle }}" aria-hidden="true">02.</span>
+            <span style="{{ stepChipStyle }}" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 48 48" fill="none" stroke="#456f89" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="13" rx="3"></rect><rect x="28" y="30" width="16" height="13" rx="3"></rect><path d="M20 11.5h6a5 5 0 0 1 5 5V30"></path></svg></span>
+            <h3 style="{{ skillTitleStyle }}">Workflows bauen. <em style="{{ skillTitleEmStyle }}">Prompts, Agents und Standards</em></h3>
+            <p style="{{ skillTextStyle }}">Prompt-Bibliotheken, Workflows und spezialisierte Agents für Website, Advertorials, Newsletter und Social Media aufsetzen. Markenstimme, Quellenprüfung und Freigabe sind dabei feste Schritte, denn in der Gesundheitskommunikation gilt: AI beschleunigt, der Mensch prüft.</p>
+          </li>
+          <li style="{{ stepStyle }}">
+            <span style="{{ stepNumStyle }}" aria-hidden="true">03.</span>
+            <span style="{{ stepChipStyle }}" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 48 48" fill="none" stroke="#456f89" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 40 18 26l8 7L43 12"></path><path d="M33 12h10v10"></path></svg></span>
+            <h3 style="{{ skillTitleStyle }}">Wirkung messen. <em style="{{ skillTitleEmStyle }}">Performance, Tests und Learnings</em></h3>
+            <p style="{{ skillTextStyle }}">Inhalte und Kampagnen an klaren KPIs messen, Varianten testen und die Erkenntnisse zurück in Prompts und Workflows spielen. Neue Tools für Text, Bild und Video teste ich laufend und empfehle nur, was nachweislich besser ist.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <div style="{{ ctaWrapStyle }}">
+        <section id="kontakt" aria-labelledby="kontakt-title" style="{{ ctaStyle }}">
+          <div style="{{ ctaTextWrapStyle }}">
+            <span style="{{ ctaLabelStyle }}">Kontakt</span>
+            <h2 id="kontakt-title" style="{{ ctaTextStyle }}">Hab ich euch überzeugen können?<br /> Ich freue mich auf ein Gespräch mit&nbsp;euch.</h2>
+          </div>
+          <div style="{{ ctaLinksStyle }}">
+            <a href="{{ mailHref }}" class="cta-mail" aria-label="{{ mailAria }}" style="{{ ctaMailStyle }}"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg><span>E-Mail schreiben</span></a>
+            <a href="{{ telHref }}" class="cta-phone" aria-label="{{ telAria }}" style="{{ ctaPhoneStyle }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span>{{ telText }}</span></a>
+          </div>
+        </section>
+    </div>
+
+
+  </div>
+
+  <section id="einblicke" aria-labelledby="einblicke-title" style="{{ einblickeStyle }}">
+    <div style="{{ skillsHeadStyle }}">
+      <span style="{{ sectionLabelStyle }}">Arbeitsproben</span>
+      <h2 id="einblicke-title" style="{{ introH2Style }}"><span style="{{ h2AccentStyle }}">Mehr</span> <em style="{{ h2EmStyle }}">Einblicke</em></h2>
+    </div>
+  </section>
+
+  <div id="royalshrimp" style="{{ case1Style }}">
+    <div style="{{ headerStyle }}">
+      <div style="{{ eyebrowRowStyle }}">
+        <span style="{{ eyebrowStyle }}">Case 01</span>
+        <div style="{{ eyebrowLineStyle }}"></div>
+      </div>
+      <h2 style="{{ caseTitleStyle }}">RoyalShrimp.de</h2>
+      <p style="{{ caseSubtitleStyle }}">Eigener D2C&#8209;Onlineshop mit WordPress und WooCommerce, fünf Jahre betrieben</p>
+    </div>
+    <div style="{{ c1GridStyle }}">
+      <div style="{{ bulletsStyle }}">
+        <div style="{{ bulletRowStyle1 }}"><div style="{{ bulletDotWrap }}"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="8.5" fill="#dde8ee"></circle><circle cx="9" cy="9" r="4.5" fill="#6a92aa"></circle></svg></div><span style="{{ bulletTextStrongStyle1 }}">2020 zu zweit gestartet, noch vor ChatGPT und Co.: alles ohne AI aufgebaut.</span></div>
+        <div style="{{ bulletRowStyle1 }}"><div style="{{ bulletDotWrap }}"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="8.5" fill="#dde8ee"></circle><circle cx="9" cy="9" r="4.5" fill="#6a92aa"></circle></svg></div><span style="{{ bulletTextStyle1 }}">Logo und Bildsprache entwickelt, eigene Marke in einer Nische.</span></div>
+        <div style="{{ bulletRowStyle1 }}"><div style="{{ bulletDotWrap }}"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="8.5" fill="#dde8ee"></circle><circle cx="9" cy="9" r="4.5" fill="#6a92aa"></circle></svg></div><span style="{{ bulletTextStyle1 }}">Shopstruktur, Produktseiten und Checkout laufend optimiert.</span></div>
+        <div style="{{ bulletRowStyle1 }}"><div style="{{ bulletDotWrap }}"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="8.5" fill="#dde8ee"></circle><circle cx="9" cy="9" r="4.5" fill="#6a92aa"></circle></svg></div><span style="{{ bulletTextStyle1 }}">Preise, Wettbewerb und Vertriebskanäle analysiert und getestet.</span></div>
+        <div style="{{ bulletRowStyle1 }}"><div style="{{ bulletDotWrap }}"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="8.5" fill="#dde8ee"></circle><circle cx="9" cy="9" r="4.5" fill="#6a92aa"></circle></svg></div><span style="{{ bulletTextStyle1 }}">Bestellung bis Versand mit Billbee, Lexoffice und DHL automatisiert.</span></div>
+      </div>
+      <figure style="{{ c1ShowcaseStyle }}">
+        <a href="https://drive.google.com/file/d/1ZM4CWZ1CJGp5d3qtxk0aSyLfXs3kVGFF/view?usp=sharing" target="_blank" rel="noopener" class="video-tile" style="{{ c1PreviewStyle }}" data-name="video-card" aria-label="Shop-Walkthrough ansehen (öffnet extern in Google Drive)">
+          <div style="{{ c1BrowserBarStyle }}" aria-hidden="true"><span style="{{ c1DotStyle }}"></span><span style="{{ c1DotStyle }}"></span><span style="{{ c1DotStyle }}"></span></div>
+          <div style="{{ c1ScreenStyle }}">
+            <div class="vt-play" style="{{ playIconStyle }}" aria-hidden="true">
+              <svg width="{{ playIconSvgSize }}" height="{{ playIconSvgSize }}" viewBox="0 0 24 24" fill="#1c3660"><path d="M9 6.2v11.6l9.2-5.8z" stroke="#1c3660" stroke-width="0.8" stroke-linejoin="round"></path></svg>
+            </div>
+          </div>
+        </a>
+        <figcaption style="{{ c1CaptionStyle }}">
+          <div style="{{ c1CaptionTextStyle }}">
+            <span style="{{ c1CaptionLabelStyle }}">Shop-Walkthrough</span>
+            <span style="{{ c1CaptionCopyStyle }}">Kurzer Einblick in Aufbau, Struktur und Nutzerführung des Shops.</span>
+          </div>
+          <div style="{{ c1CtaWrapStyle }}">
+            <a href="https://drive.google.com/file/d/1ZM4CWZ1CJGp5d3qtxk0aSyLfXs3kVGFF/view?usp=sharing" target="_blank" rel="noopener" class="btn-pill" style="{{ c1CtaBtnStyle }}">Walkthrough ansehen</a>
+            <div style="{{ c1UtilRowStyle }}">
+              <button type="button" class="util-link" style="{{ c1UtilLinkStyle }}" onClick="{{ copyLink1 }}">{{ copyLabel1 }}</button>
+            </div>
+            <span style="{{ c1CtaNoteStyle }}">Öffnet extern in Google Drive.</span>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div id="cuply" style="{{ case2Style }}" data-section="case2">
+    <div style="{{ case2HeaderStyle }}">
+      <div style="{{ case2EyebrowRowStyle }}">
+        <span style="{{ case2EyebrowStyle }}">Case 02</span>
+        <div style="{{ case2EyebrowLineStyle }}"></div>
+      </div>
+      <h2 style="{{ case2TitleStyle }}">Cuply</h2>
+      <p style="{{ case2SubtitleStyle }}">Integriertes Marketing-Konzept: Leadgenerierung, Paid Media, Landingpage und Measurement</p>
+    </div>
+    <div style="{{ case2ContentRowStyle }}">
+      <img src="assets/cuply-book-kijimea.jpg" alt="Cuply – Titelbild der fiktiven Marketing-Case-Study" style="{{ cuplyImgStyle }}" />
+      <div style="{{ case2RightColStyle }}">
+        <div style="{{ bulletsStyle2 }}">
+          <div style="{{ bulletRowStyle2 }}"><div style="{{ case2BulletDotWrap }}"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="8.5" fill="#dde8ee"></circle><circle cx="9" cy="9" r="4.5" fill="#6a92aa"></circle></svg></div><span style="{{ bulletTextStyle2 }}">Leadgenerierung mit Newsletter, Lead Magnets und automatisierten Kontaktstrecken konzipiert.</span></div>
+          <div style="{{ bulletRowStyle2 }}"><div style="{{ case2BulletDotWrap }}"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="8.5" fill="#dde8ee"></circle><circle cx="9" cy="9" r="4.5" fill="#6a92aa"></circle></svg></div><span style="{{ bulletTextStyle2 }}">Meta-Kampagnenstruktur mit Targeting, Anzeigenformaten und Creative-Hypothesen entwickelt.</span></div>
+          <div style="{{ bulletRowStyle2 }}"><div style="{{ case2BulletDotWrap }}"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="8.5" fill="#dde8ee"></circle><circle cx="9" cy="9" r="4.5" fill="#6a92aa"></circle></svg></div><span style="{{ bulletTextStyle2 }}">Landingpage konzipiert und gestaltet, mit Message Match, Preisentscheidung und klarer Conversion-Logik.</span></div>
+          <div style="{{ bulletRowStyle2 }}"><div style="{{ case2BulletDotWrap }}"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="8.5" fill="#dde8ee"></circle><circle cx="9" cy="9" r="4.5" fill="#6a92aa"></circle></svg></div><span style="{{ bulletTextStyle2 }}">Erfolgsmessung mit Measurement Framework, KPI-Systematik und UTM-Taxonomie geplant.</span></div>
+        </div>
+        <p style="{{ caseNoteStyle }}">Case Study aus der Weiterbildung, entwickelt für ein fiktives Beispielprodukt.</p>
+        <a href="https://drive.google.com/file/d/1D6PM6L-wvPN5Ki1uZ-346SJD_HgwOttX/view?usp=sharing" target="_blank" rel="noopener" class="btn-pill" style="{{ primaryBtnStyle }}">Gesamte Case Study ansehen</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer in Kijimea navy: white wordmark with blue-grey dot and white copy left (12:1);
+       a deeper navy panel with a blue-grey swoosh carries the contact links on the right (14.3:1). -->
+  <footer style="{{ footerStyle }}">
+    <svg style="{{ footerArcsStyle }}" viewBox="0 0 800 400" preserveAspectRatio="xMinYMin slice" aria-hidden="true" focusable="false">
+      <!-- five crisp, stacked blue-grey arcs (6 % each); white text stays far above 4.5:1 on the darkest overlap -->
+      <circle cx="-180" cy="620" r="900" fill="#6a92aa" opacity="0.06"></circle>
+      <circle cx="-180" cy="620" r="800" fill="#6a92aa" opacity="0.06"></circle>
+      <circle cx="-180" cy="620" r="710" fill="#6a92aa" opacity="0.06"></circle>
+      <circle cx="-180" cy="620" r="630" fill="#6a92aa" opacity="0.06"></circle>
+      <circle cx="-180" cy="620" r="560" fill="#6a92aa" opacity="0.06"></circle>
+    </svg>
+    <div style="{{ footerMainStyle }}">
+      <div style="{{ footerBrandStyle }}">
+        <span style="{{ footerNameStyle }}">Svenja Mumelter<span aria-hidden="true" style="{{ footerDotStyle }}">.</span></span>
+        <p style="{{ footerAboutStyle }}">Konzept, Inhalt und Design aus einer Hand.</p>
+      </div>
+      <div style="{{ footerBarLeftStyle }}"><span>© 2026 · Logos und Markennamen gehören den jeweiligen Inhabern.</span></div>
+    </div>
+    <div style="{{ footerPanelStyle }}">
+      <svg style="{{ footerCurveDesktopStyle }}" viewBox="0 0 220 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path d="M220 0 C 165 38, 80 78, 0 100 L220 100 Z" fill="#6a92aa"></path>
+        <path d="M220 0 C 178 44, 118 80, 64 100 L220 100 Z" fill="#142a4d"></path>
+      </svg>
+      <svg style="{{ footerCurveMobileStyle }}" viewBox="0 0 100 48" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path d="M0 48 C 30 40, 68 22, 100 0 L100 48 Z" fill="#6a92aa"></path>
+        <path d="M0 48 C 38 44, 74 30, 100 13 L100 48 Z" fill="#142a4d"></path>
+      </svg>
+      <div style="{{ footerColsStyle }}">
+        <div style="{{ footerColStyle }}">
+          <span style="{{ footerColHeadStyle }}">Kontakt</span>
+          <a href="{{ mailHref }}" class="footer-link" style="{{ footerLinkStyle }}">{{ mailText }}</a>
+          <a href="{{ telHref }}" class="footer-link" style="{{ footerLinkStyle }}">{{ telText }}</a>
+        </div>
+      </div>
+      <div style="{{ footerBarRightStyle }}">
+        <span style="{{ footerCopyMobileStyle }}">© 2026 · Logos und Markennamen gehören den jeweiligen Inhabern.</span>
+        <span>Mit <svg width="13" height="13" viewBox="0 0 24 24" fill="#ffffff" role="img" aria-label="Liebe" style="{{ footerHeartStyle }}"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.2 0 3.6 1.2 5.2 3 1.6-1.8 3-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"></path></svg> und Claude Code gebaut in München</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    isMobile: typeof window !== "undefined" ? window.innerWidth <= 859 : false,
+    copied1: false,
+    gallery: null, /* { k: project key, i: slide index } while the overlay is open */
+  };
+
+  componentDidMount() {
+    this._onResize = () => {
+      const m = window.innerWidth <= 859;
+      if (m !== this.state.isMobile) this.setState({ isMobile: m });
+    };
+    window.addEventListener("resize", this._onResize);
+    /* gallery: arrow keys, swipe (one finger, page not pinch-zoomed), native close (Esc) syncs the state */
+    this._onKey = (e) => {
+      if (!this.state.gallery) return;
+      if (e.key === "ArrowLeft") { e.preventDefault(); this.prevSlide(); }
+      if (e.key === "ArrowRight") { e.preventDefault(); this.nextSlide(); }
+    };
+    document.addEventListener("keydown", this._onKey);
+    const dlg = document.getElementById("proj-dialog");
+    const stage = document.getElementById("proj-stage");
+    /* ignore a late "close" from an earlier session if the dialog is already open again */
+    this._onClose = () => { if (this.state.gallery && !(dlg && dlg.open)) this.setState({ gallery: null }); };
+    if (dlg) dlg.addEventListener("close", this._onClose);
+    this._onTouchStart = (e) => { this._tx = e.touches.length === 1 ? e.touches[0].clientX : null; };
+    this._onTouchEnd = (e) => {
+      if (this._tx == null || (window.visualViewport && window.visualViewport.scale > 1.05)) return;
+      const dx = e.changedTouches[0].clientX - this._tx;
+      this._tx = null;
+      if (Math.abs(dx) > 45) (dx < 0 ? this.nextSlide : this.prevSlide)();
+    };
+    if (stage) {
+      stage.addEventListener("touchstart", this._onTouchStart, { passive: true });
+      stage.addEventListener("touchend", this._onTouchEnd, { passive: true });
+    }
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this._onResize);
+    document.removeEventListener("keydown", this._onKey);
+  }
+
+  copyLink1 = () => {
+    const text = "https://drive.google.com/file/d/1ZM4CWZ1CJGp5d3qtxk0aSyLfXs3kVGFF/view?usp=sharing";
+    if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
+    this.setState({ copied1: true });
+    clearTimeout(this._t1);
+    this._t1 = setTimeout(() => this.setState({ copied1: false }), 1600);
+  };
+
+  /* project data for the AI section. Images: assets/projekte/<key>-<n>.webp, built by _quellen/bilder_einbauen.py.
+     frame = "phone" (smartphone frame), "browser" (browser frame) or "plain" (square image, no frame).
+     ready: false = card shows text only (no preview, not clickable) until the real screenshots are in */
+  projects = {
+    ausgaben: {
+      ready: true,
+      preview: 3, /* card preview = the form screenshot, gallery still starts at 1 */
+      title: "Ausgaben-App mit AI-Bon-Erfassung",
+      oneliner: "Vom Kassenbon zur Ausgabe, automatisch.",
+      bullets: [
+        "REWE schickt den Kassenbon per E-Mail.",
+        "n8n auf unserem Pi liest ihn mit AI aus.",
+        "Artikel und Beträge landen in unserer App.",
+      ],
+      slides: [
+        { frame: "phone", caption: "Übersicht mit den letzten Buchungen, der REWE-Einkauf kam automatisch über den Kassenbon.",
+          alt: "Ausgaben-App, Startseite: Saldo und Liste der letzten Buchungen, oben ein REWE-Einkauf." },
+        { frame: "browser", caption: "Der n8n-Workflow: Bon-Mail abholen, PDF auslesen, Ausgabe anlegen und per Telegram Bescheid geben.",
+          alt: "n8n-Workflow: Outlook-Trigger, Mail abrufen, PDF-Text extrahieren, REWE-Bon auslesen, Ausgabe anlegen, Prüfung mit Erfolgs- und Fehlermeldung per Telegram." },
+        { frame: "phone", caption: "Ausgaben lassen sich auch von Hand erfassen, mit Aufteilung, wer bezahlt hat und für wen.",
+          alt: "Ausgaben-App, Formular „Neue Ausgabe“ mit Beschreibung, Betrag, Datum, bezahlt von und für." },
+        { frame: "plain", caption: "Als eigene App auf dem Homescreen.",
+          alt: "App-Icon „Ausgaben“: grünes Geldbündel mit Euro-Zeichen." },
+      ],
+    },
+    wander: {
+      ready: true,
+      title: "Wander- und Reise-App",
+      oneliner: "Touren und Reisen festhalten und teilen.",
+      bullets: [
+        "Route aus GPX-Datei direkt auf der Karte.",
+        "Fotos landen automatisch bei der Tour.",
+        "Teilen per Link, mit Ablauf und Passwort.",
+      ],
+      slides: [
+        { frame: "phone", caption: "Tourenübersicht mit Fotos, Schwierigkeit, Strecke, Höhenmetern und Gehzeit.",
+          alt: "Wander-App, Tourenliste: Isarwanderung Höllriegelskreuth – Schäftlarn mit Foto, 13,2 km, 183 hm, 4:52 h." },
+        { frame: "phone", caption: "Die Route aus der GPX-Datei auf der Karte, darunter das Höhenprofil.",
+          alt: "Wander-App, Karte mit rot eingezeichneter Rundtour in Südtirol und Höhenprofil darunter." },
+        { frame: "phone", caption: "Jede Tour bekommt eine eigene Seite mit Titelbild, Beschreibung und Kennzahlen.",
+          alt: "Wander-App, Tourseite „Hammerwand und Bärenfalle“ mit Bergfoto, Beschreibung, Strecke und Aufstieg." },
+        { frame: "phone", caption: "Teilen per Link, mit Passwort und frei wählbarer Gültigkeit.",
+          alt: "Wander-App, Dialog „Teilen“ mit Passwortfeld und Gültigkeit von 7, 30 oder 90 Tagen." },
+      ],
+    },
+    fitness: {
+      ready: true,
+      title: "Fitness-App mit AI-Steuerung",
+      oneliner: "Training und Ernährung, gesteuert per Chat.",
+      bullets: [
+        "Mahlzeit per Chat, MCP trägt Kalorien ein.",
+        "Trainingsplan zeigt, wann ich steigern kann.",
+        "Gewichtsverlauf als Kurve über Monate.",
+      ],
+      slides: [
+        { frame: "phone", caption: "Startseite mit dem heutigen Training, Wochenziel und Hinweisen wie einer empfohlenen Deload-Woche.",
+          alt: "Fitness-App, Startseite „Servus, Svenja“ mit dem heutigen Ganzkörpertraining und dem Button „Training starten“." },
+        { frame: "phone", caption: "Im Training: Gewicht und Wiederholungen pro Satz, die App zeigt, wann ich steigern kann.",
+          alt: "Fitness-App während des Trainings: Übung Chest-Supported Row mit Sätzen, Gewicht, Wiederholungen und Pausen-Timer." },
+        { frame: "phone", caption: "Kalorienbedarf und Ziel, berechnet aus Alltag und Training.",
+          alt: "Fitness-App, Kalorien: Gesamtumsatz, Ziel „Halten“ und Protein-Empfehlung." },
+        { frame: "phone", caption: "Statistik: Sätze pro Woche und Verteilung nach Muskelgruppe.",
+          alt: "Fitness-App, Statistik mit Balkendiagramm der Sätze pro Woche und Ringdiagramm nach Muskelgruppe." },
+      ],
+    },
+    keyboard: {
+      title: "Keyboard",
+      slides: [
+        { frame: "browser", caption: "Übungsansicht mit Split-Keyboard: Neue Buchstaben kommen erst dazu, wenn die bisherigen sitzen.",
+          alt: "Keyboard-Trainer, Übungsansicht: Textzeile zum Abtippen über einer eingeblendeten geteilten Tastatur, der aktuelle Buchstabe ist hervorgehoben." },
+        { frame: "browser", caption: "Claude analysiert die bisherigen Läufe und stellt daraus die Einheit des Tages zusammen.",
+          alt: "Keyboard-Trainer, Ansicht „Die Einheit“: drei nummerierte Übungsblöcke mit Begründung und Ziel, darunter „Wohin das führt“." },
+      ],
+    },
+    orbit: {
+      title: "Orbit",
+      slides: [
+        { frame: "browser", src: "assets/projekte/orbit-1.webp",
+          alt: "Screenshot von Orbit: Kanban-Board mit den Spalten Themenspeicher, To-do, In Arbeit, Review und Erledigt, jede Karte mit Fälligkeit, Checkliste und Kategorie.",
+          caption: "Projekt „Spaceship“ in Orbit: alle Aufgaben für mein Alltags-Dashboard, vom Themenspeicher bis Erledigt, jede Karte mit Fälligkeit, Checkliste und Kategorie." },
+      ],
+    },
+  };
+  slidesOf = (k) => {
+    const pr = this.projects[k];
+    return pr.slides.map((sl, i) => Object.assign({
+      src: "assets/projekte/" + k + "-" + (i + 1) + ".webp",
+      alt: pr.title + ", Screenshot " + (i + 1) + " von " + pr.slides.length,
+    }, sl));
+  };
+
+  openGallery = (k) => {
+    this.setState({ gallery: { k: k, i: 0 } });
+    const d = document.getElementById("proj-dialog");
+    if (d && d.showModal && !d.open) d.showModal();
+  };
+  closeGallery = () => {
+    const d = document.getElementById("proj-dialog");
+    if (d && d.open) d.close();
+    this.setState({ gallery: null });
+  };
+  stepSlide = (dir) => {
+    const g = this.state.gallery;
+    if (!g) return;
+    const n = this.projects[g.k].slides.length;
+    this.setState({ gallery: { k: g.k, i: (g.i + dir + n) % n } });
+  };
+  prevSlide = () => this.stepSlide(-1);
+  nextSlide = () => this.stepSlide(1);
+  /* a click on the dimmed area (= the dialog element itself, outside its content) closes it */
+  onDialogBackdrop = (e) => {
+    if (e && e.target === e.currentTarget) this.closeGallery();
+  };
+
+  renderVals() {
+    const m = this.state.isMobile;
+    // contact data is only assembled here (base64), so it never appears as plain text in the HTML source (basic scraper protection)
+    const mail = atob("c3ZlbmphLm11bWVsdGVyQGdteC5kZQ==");
+    const telIntl = atob("KzQ5MTc2ODE5MjIwMzM=");
+    const telShown = atob("MDE3NiA4MTkyMjAzMw==");
+    // Design tokens (defined in the <helmet> :root block above)
+    const strong = "var(--text-primary)";
+    const muted = "var(--text-secondary)";
+    const bodyText = "var(--ink-700)";
+    const accent = "var(--accent-primary)";
+    const ink = "var(--blue-ink)";
+    const border = "var(--border-subtle)";
+    const paper = "var(--surface-page)";
+    const font = "var(--font-body)";
+    const display = "var(--font-display)";
+    const previewImg = "assets/video-thumb-kijimea.jpg";
+    /* small uppercase label (section labels, case eyebrows) in blue-grey ink */
+    const label = {
+      fontFamily: font, fontWeight: 600, fontSize: m ? 13 : 14,
+      letterSpacing: "var(--ls-wide)", textTransform: "uppercase", lineHeight: 1.4,
+      color: ink, margin: 0,
+    };
+    /* Kijimea headline: Open Sans bold, navy, near-neutral tracking, sentence case */
+    const headline = { fontFamily: display, fontWeight: 700, letterSpacing: "var(--ls-tight)", color: strong, margin: 0 };
+    /* navy button with Kijimea's small radius; hover swaps to blue-grey (see .btn-pill in <style>) */
+    const pill = {
+      display: "inline-flex", alignItems: "center", justifyContent: "center",
+      borderRadius: 8, backgroundColor: "var(--ink-900)", color: "var(--white)",
+      fontFamily: font, fontWeight: 600, letterSpacing: "-0.01em",
+      textDecoration: "none", textAlign: "center", whiteSpace: "nowrap", boxSizing: "border-box",
+    };
+
+    /* ---- AI section data ---- */
+    const stageH = m ? "min(62vh, 560px)" : "min(68vh, 740px)";
+    /* card preview: first image "peeks" in from below on a soft tint (phone centred, browser offset to the right) */
+    const previewPeek = (frame) => frame === "phone"
+      ? { position: "absolute", top: 22, left: "50%", transform: "translateX(-50%)", width: "50%", height: "auto", display: "block",
+          borderRadius: "14px 14px 0 0", border: "1px solid #d3dee1", borderBottom: 0 }
+      : { position: "absolute", top: 22, left: 24, width: "calc(100% - 24px)", height: "calc(100% - 22px)", display: "block",
+          objectFit: "cover", objectPosition: "left top", borderRadius: "10px 0 0 0", border: "1px solid #d3dee1", borderRight: 0, borderBottom: 0 };
+    const cardBase = {
+      position: "relative", display: "flex", flexDirection: "column", minWidth: 0, overflow: "hidden", cursor: "pointer",
+      backgroundColor: "var(--white)", border: "1px solid #e1e8ed", borderRadius: 16,
+    };
+    const bigProjects = ["fitness", "wander", "ausgaben"].map((k) => {
+      const pr = this.projects[k];
+      return {
+        key: k, title: pr.title, oneliner: pr.oneliner, bullets: pr.bullets,
+        preview: "assets/projekte/" + k + "-" + (pr.preview || 1) + ".webp", previewImgStyle: previewPeek(pr.slides[(pr.preview || 1) - 1].frame),
+        open: () => this.openGallery(k),
+        ready: !!pr.ready, cls: pr.ready ? "ai-card-click" : "",
+        cardStyle: pr.ready ? cardBase : Object.assign({}, cardBase, { cursor: "default" }),
+      };
+    });
+    const tile = { gridColumn: "auto", display: "flex", flexDirection: "column", gap: 6, minWidth: 0, borderRadius: 18, padding: m ? "18px 20px 20px 20px" : "20px 24px 22px 24px" };
+    const tileTitle = Object.assign({}, headline, { fontWeight: 600, fontSize: m ? 16 : 17, lineHeight: 1.3, letterSpacing: "-0.02em" });
+    const tileText = { fontFamily: font, fontWeight: 400, fontSize: 15, lineHeight: 1.55, margin: 0 };
+    /* Orbit + Keyboard: same card build, landscape preview centred with an even margin on all four sides */
+    const duoInset = m ? 16 : 22;
+    const duoPeek = { position: "absolute", top: duoInset, left: duoInset, width: "calc(100% - " + 2 * duoInset + "px)", height: "calc(100% - " + 2 * duoInset + "px)",
+      display: "block", boxSizing: "border-box", objectFit: "cover", objectPosition: "left top", borderRadius: 12, border: "1px solid #d3dee1" };
+    const duoProjects = [
+      { title: "Orbit", preview: "assets/projekte/orbit-1.webp", hint: "Screenshot ansehen", open: () => this.openGallery("orbit"),
+        p1: "Selbst gebautes Projektmanagement-Tool, per MCP mit Claude verbunden.",
+        p2: "Der Screenshot zeigt mein aktuelles Projekt „Spaceship“: ein Alltags-Dashboard, das Aufgaben, Kalender und Finanzen an einem Ort bündeln soll." },
+      { title: "Keyboard", preview: "assets/projekte/keyboard-1.webp", hint: "Screenshots ansehen", open: () => this.openGallery("keyboard"),
+        p1: "Eigener 10-Finger-Trainer für mein Split-Keyboard, mit Claude als Coach.",
+        p2: "Claude wertet Fehlerquoten und Tempo je Finger aus und stellt daraus jeden Tag die passende Einheit mit Begründung und Ziel zusammen." },
+    ].map((q) => Object.assign(q, { previewImgStyle: duoPeek }));
+    const more = [
+      ["Zeiterfassung per MCP", "Eigener MCP-Server für Toggl: per Sprache in Codex erfasst, Kalender inklusive."],
+      ["Paperless mit AI", "Dokumentenmanagement auf dem Pi, AI benennt und verschlagwortet Dokumente automatisch."],
+      ["Lern-App zur Prüfungsvorbereitung", "Alle Unterlagen meiner Weiterbildungsmodule in einer eigenen App zum Lernen."],
+      ["Smart-Home-Automationen", "Licht, Musik und Saugroboter laufen automatisch, die Lichtfarbe ändere ich per Claude."],
+    ];
+    const moreProjects = more.map(([t, x]) => ({
+      title: t, text: x,
+      cardStyle: Object.assign({}, tile, { backgroundColor: "var(--white)", border: "1px solid #e1e8ed" }),
+      titleStyle: tileTitle,
+      textStyle: Object.assign({}, tileText, { color: bodyText }),
+    }));
+    /* overlay */
+    const g = this.state.gallery;
+    const gSlides = g ? this.slidesOf(g.k) : [];
+    const cur = g ? gSlides[g.i] : null;
+    const slide = cur ? {
+      src: cur.src, alt: cur.alt, caption: cur.caption, isBrowser: cur.frame === "browser",
+      frameStyle: cur.frame === "plain"
+        ? { display: "block", maxWidth: "100%" }
+        : cur.frame === "phone"
+        ? { display: "block", padding: m ? 6 : 8, borderRadius: m ? 30 : 38, backgroundColor: "#0c1a30", border: "1px solid rgba(255,255,255,0.22)", maxWidth: "100%" }
+        : { display: "block", borderRadius: 12, overflow: "hidden", backgroundColor: "#f3f6f7", border: "1px solid rgba(255,255,255,0.22)", maxWidth: "100%" },
+      imgStyle: cur.frame === "plain"
+        ? { display: "block", width: "auto", height: "auto", maxWidth: "100%", maxHeight: "calc(" + stageH + " - 40px)", borderRadius: 22 }
+        : cur.frame === "phone"
+        ? { display: "block", height: "calc(" + stageH + " - " + (m ? 14 : 18) + "px)", width: "auto", maxWidth: "100%", borderRadius: m ? 24 : 30 }
+        : { display: "block", width: "auto", height: "auto", maxWidth: "100%", maxHeight: "calc(" + stageH + " - 32px)" },
+    } : { src: "", alt: "", caption: "", isBrowser: false, frameStyle: {}, imgStyle: {} };
+    const dots = gSlides.map((sl, i) => ({
+      label: "Bild " + (i + 1) + " von " + gSlides.length, current: i === g.i ? "true" : "false",
+      go: () => this.setState({ gallery: { k: g.k, i: i } }),
+      dotStyle: { display: "block", width: 9, height: 9, borderRadius: 999, backgroundColor: i === g.i ? "var(--blue)" : "rgba(255,255,255,0.38)" },
+    }));
+
+    return {
+      bigProjects: bigProjects, duoProjects: duoProjects, moreProjects: moreProjects, slide: slide, dots: dots,
+      dlgOpen: !!g, dlgMulti: gSlides.length > 1,
+      dlgTitle: g ? this.projects[g.k].title : "", dlgCount: gSlides.length > 1 ? (g.i + 1) + " / " + gSlides.length : "",
+      copyLabel1: this.state.copied1 ? "Link kopiert ✓" : "Link kopieren",
+      mailHref: "mailto:" + mail, mailText: mail, mailAria: "E-Mail an " + mail + " schreiben",
+      telHref: "tel:" + telIntl, telText: telShown, telAria: "Svenja Mumelter anrufen: " + telShown,
+      copyLink1: this.copyLink1,
+      closeGallery: this.closeGallery, onDialogBackdrop: this.onDialogBackdrop,
+      prevSlide: this.prevSlide, nextSlide: this.nextSlide,
+
+      pageStyle: {
+        fontFamily: font,
+        backgroundColor: paper,
+        color: strong,
+        display: "flex",
+        flexDirection: "column",
+        overflow: "hidden",
+        width: "100%",
+        maxWidth: 1440,
+        margin: "0 auto",
+      },
+
+      heroIntroWrapStyle: { position: "relative" },
+      swooshStyle: {
+        position: "absolute", top: 0, right: 0, zIndex: 0, pointerEvents: "none",
+        width: m ? "100%" : "min(60%, 880px)", height: m ? 300 : 560,
+        opacity: m ? 0.5 : 1,
+      },
+      /* Hero: header row (wordmark | nav), then kicker, two-tone headline and a calm intro line */
+      heroStyle: {
+        position: "relative", zIndex: 1,
+        display: "flex", flexDirection: "column",
+        gap: m ? 40 : 80,
+        padding: m ? "26px 24px 4px 24px" : "32px 72px 16px 72px",
+      },
+      heroTopRowStyle: {
+        display: "flex", flexDirection: m ? "column" : "row", flexWrap: "wrap",
+        alignItems: m ? "flex-start" : "center", justifyContent: "space-between",
+        gap: m ? 20 : 24,
+      },
+      /* company logo top left (as on the Mehr Ampere / AkuRat pages); the user's own wordmark lives in the footer */
+      heroLogoStyle: { display: "block", height: m ? 32 : 42, width: "auto" },
+      navStyle: {
+        display: "flex", flexWrap: "wrap", gap: m ? "6px 18px" : "8px 36px",
+        fontFamily: font, fontWeight: 500, fontSize: m ? 15 : 16, lineHeight: 1.4,
+        color: strong,
+      },
+      heroTextStyle: { display: "flex", flexDirection: "column", gap: m ? 14 : 22, maxWidth: 1200 },
+      heroLeadStyle: {
+        fontFamily: font, fontWeight: 400, fontSize: m ? 17 : 20, lineHeight: 1.6,
+        color: bodyText, margin: m ? "6px 0 0 0" : "10px 0 0 0", maxWidth: 1200,
+      },
+      heroKickerStyle: Object.assign({}, label, { fontSize: m ? 13 : 15 }),
+      h1Style: Object.assign({}, headline, {
+        fontWeight: 700,
+        fontSize: m ? "calc((100vw - 48px) / 9.6)" : "min(54px, calc((100vw - 144px) / 22.5))", /* desktop: "Prompts bauen. Workflows automatisieren." (~21.2em) stays on one line inside the 1200px text column */
+        lineHeight: 1.04,
+      }),
+      h1AccentStyle: { color: accent },
+      h1EmStyle: { display: "block", fontStyle: "italic", fontWeight: 600, color: strong },
+
+      /* "Kurz über mich": large 4:5 portrait with a flat blue-grey block offset behind it, copy left, key facts underneath */
+      aboutSectionStyle: {
+        display: "flex", flexDirection: "column", gap: m ? 32 : 56,
+        padding: m ? "44px 24px 64px 24px" : "60px 72px 88px 72px", /* even section rhythm (~104-124px between blocks) */
+      },
+      aboutStyle: {
+        display: "flex", flexDirection: m ? "column" : "row",
+        alignItems: m ? "flex-start" : "center",
+        gap: m ? 44 : "clamp(56px, 7vw, 104px)",
+        justifyContent: "space-between",
+      },
+      /* portrait + caption; desktop: copy left, portrait right; mobile: portrait first */
+      aboutFigureStyle: {
+        display: "flex", flexDirection: "column", alignItems: "flex-start", flexShrink: 0, margin: 0,
+        width: m ? "min(calc(100% - 16px), 220px)" : "clamp(200px, 19vw, 260px)", /* about 20 % smaller than before (325 / 270px) */
+        marginRight: m ? 16 : 22,
+        order: m ? 0 : 2,
+      },
+      aboutPhotoWrapStyle: { position: "relative", width: "100%", marginBottom: m ? 16 : 22 },
+      /* small caption under the photo, below the offset blue-grey block, left edge = photo edge */
+      aboutCaptionStyle: { fontFamily: font, fontWeight: 400, fontSize: 14, lineHeight: 1.4, color: muted, marginTop: 12 },
+      aboutPhotoBlockStyle: {
+        position: "absolute", top: m ? 16 : 22, left: m ? 16 : 22, right: m ? -16 : -22, bottom: m ? -16 : -22,
+        backgroundColor: "var(--blue)", borderRadius: 16,
+      },
+      aboutPhotoStyle: {
+        position: "relative", display: "block", width: "100%", height: "auto",
+        aspectRatio: "4 / 5", objectFit: "cover", borderRadius: 16,
+        border: "1px solid #e1e8e8", boxSizing: "border-box", /* white studio background needs a hairline edge */
+      },
+      aboutTextStyle: { display: "flex", flexDirection: "column", gap: m ? 16 : 20, maxWidth: 800, minWidth: 0, flex: m ? "0 0 auto" : "1 1 auto", order: 1 },
+      /* large, quiet German opening quote above paragraph 1, in Kijimea blue-grey */
+      /* the low „ glyph sits on the baseline, so a fixed-height box shows only the mark, shifted up into it */
+      aboutQuoteMarkStyle: {
+        display: "block", fontFamily: display, fontWeight: 700, fontSize: m ? 72 : 96, lineHeight: 1,
+        height: m ? 30 : 40, overflow: "hidden", color: "var(--blue)", opacity: 0.6, margin: m ? "0 0 4px -3px" : "0 0 6px -4px",
+      },
+      aboutQuoteGlyphStyle: { display: "block", transform: m ? "translateY(-46px)" : "translateY(-62px)" },
+      aboutLeadStyle: {
+        fontFamily: font, fontWeight: 500, fontSize: m ? 18 : 20, lineHeight: 1.6, letterSpacing: "-0.01em",
+        color: strong, margin: 0,
+      },
+      aboutBodyStyle: {
+        fontFamily: font, fontWeight: 400, fontSize: m ? 16 : 17, lineHeight: 1.7,
+        color: bodyText, margin: 0,
+      },
+      /* facts sit close under paragraph 2 (one block: 28 / 40px instead of 56 / 88px), the hairline now closes the section below them */
+      factsStyle: m ? {
+        display: "flex", flexDirection: "column", gap: 18,
+        margin: "-4px 0 0 0", paddingBottom: 24, borderBottom: "1px solid var(--border-subtle)", width: "100%",
+      } : {
+        display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 28,
+        margin: "-16px 0 0 0", paddingBottom: 32, borderBottom: "1px solid var(--border-subtle)", width: "100%",
+      },
+      factStyle: { display: "flex", flexDirection: "column", gap: 6, minWidth: 0 },
+      /* "Mein Bezug zur Stelle": rounded light card with a blue-grey edge, regular + bold-italic lead-in */
+      bezugStyle: {
+        display: "flex", flexDirection: "column", gap: m ? 10 : 12, width: "100%", boxSizing: "border-box", /* full width like the facts row above; text runs in long lines */
+        backgroundColor: "var(--surface-sunken)", borderRadius: 16, borderLeft: "4px solid var(--blue)",
+        padding: m ? "24px 22px 26px 20px" : "34px 48px 36px 44px", /* more air inside so the card doesn't feel squeezed under the facts */
+        marginTop: m ? 8 : 16, /* 40 / 72px below the facts row instead of 32 / 56 */
+      },
+      bezugLabelStyle: label,
+      bezugTextStyle: {
+        fontFamily: font, fontWeight: 400, fontSize: m ? 16 : 18, lineHeight: 1.65, letterSpacing: "-0.01em",
+        color: strong, margin: 0,
+      },
+      bezugEmStyle: { fontStyle: "italic", fontWeight: 700 },
+      factNumStyle: Object.assign({}, headline, {
+        fontSize: m ? 34 : 42, lineHeight: 1.05, color: accent, whiteSpace: "nowrap",
+      }),
+      factTextStyle: {
+        fontFamily: font, fontWeight: 500, fontSize: 15, lineHeight: 1.45,
+        color: muted, margin: 0,
+      },
+
+      /* "Mein Ansatz": quote + headline (blue-grey / navy / italic) + three white rounded cards with blue-grey line icons */
+      introStyle: {
+        position: "relative", zIndex: 1,
+        backgroundColor: "var(--surface-sunken)", borderRadius: m ? 16 : 24, overflow: "hidden",
+        marginTop: m ? 40 : 72, /* clear gap after the grey skills panel, same as around the contact card */
+        display: "flex", flexDirection: "column", gap: m ? 32 : 48,
+        padding: m ? "56px 24px 56px 24px" : "96px 72px 96px 72px", /* grey panels: unified 96px top/bottom */
+        alignItems: "flex-start",
+      },
+      ansatzSwooshStyle: {
+        position: "absolute", top: 0, right: 0, zIndex: 0, pointerEvents: "none",
+        width: m ? "100%" : "min(52%, 760px)", height: m ? 320 : 560, opacity: m ? 0.7 : 1,
+      },
+      skillsHeadStyle: { position: "relative", zIndex: 1, display: "flex", flexDirection: "column", gap: m ? 12 : 16 },
+      sectionLabelStyle: label,
+      /* "Mein Ansatz": a short quote in place of the label, italic in blue-grey ink (>= 4.5:1), sentence case */
+      ansatzQuoteStyle: { fontFamily: font, fontStyle: "italic", fontWeight: 500, fontSize: m ? 18 : 20, lineHeight: 1.4, letterSpacing: "-0.01em", color: ink, margin: 0 },
+      introH2Style: Object.assign({}, headline, {
+        fontWeight: 600,
+        fontSize: m ? "calc((100vw - 48px) / 11)" : "min(48px, calc((100vw - 144px) / 25))",
+        lineHeight: 1.1, maxWidth: 1240,
+      }),
+      h2AccentStyle: { color: accent },
+      h2EmStyle: { fontStyle: "italic", fontWeight: 700, color: strong },
+      approachLeadStyle: {
+        fontFamily: font, fontWeight: 400, fontSize: m ? 17 : 18, lineHeight: 1.6,
+        color: bodyText, margin: m ? "4px 0 0 0" : "6px 0 0 0", maxWidth: 1000,
+      },
+      /* tiles: white rounded cards on a faint, radially faded grid;
+         big light-grey "01." numbers (decorative, aria-hidden), small icon chip, two-line title (regular + bold italic) */
+      stepsWrapStyle: { position: "relative", zIndex: 1, width: "100%" },
+      stepsGridBgStyle: {
+        position: "absolute", inset: m ? "-24px -24px" : "-64px -72px", zIndex: 0, pointerEvents: "none",
+        backgroundImage: "linear-gradient(#dfe6e7 2px, transparent 2px), linear-gradient(90deg, #dfe6e7 2px, transparent 2px)",
+        backgroundSize: m ? "72px 72px" : "112px 112px", backgroundPosition: "center",
+        WebkitMaskImage: "radial-gradient(ellipse at center, #000 35%, transparent 72%)",
+        maskImage: "radial-gradient(ellipse at center, #000 35%, transparent 72%)",
+      },
+      stepsStyle: m ? {
+        position: "relative", zIndex: 1, listStyle: "none", margin: 0, padding: 0,
+        display: "flex", flexDirection: "column", gap: 16, width: "100%",
+      } : {
+        position: "relative", zIndex: 1, listStyle: "none", margin: 0, padding: 0,
+        display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 24, width: "100%",
+      },
+      stepStyle: {
+        display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 0,
+        backgroundColor: "var(--white)", borderRadius: 16,
+        padding: m ? "24px 22px 28px 22px" : "30px 32px 36px 32px",
+      },
+      stepNumStyle: Object.assign({}, headline, {
+        fontWeight: 500, fontSize: m ? 52 : 64, lineHeight: 1, letterSpacing: "-0.05em",
+        color: "#dfe5e7", marginBottom: m ? 28 : 48,
+      }),
+      stepChipStyle: {
+        display: "inline-flex", alignItems: "center", justifyContent: "center",
+        width: 30, height: 30, borderRadius: 9, backgroundColor: "#f1f5f5", border: "1px solid #e3eaea",
+        marginBottom: 12,
+      },
+      /* Skills und Tools: its own grey rounded panel (separated from "Mein Ansatz" by a white gap), white group cards */
+      skillsSectionStyle: {
+        position: "relative", zIndex: 1,
+        backgroundColor: "var(--surface-sunken)", borderRadius: m ? 16 : 24,
+        display: "flex", flexDirection: "column", gap: m ? 28 : 40,
+        padding: m ? "56px 24px 56px 24px" : "96px 72px 96px 72px", /* grey panels: unified 96px top/bottom */
+      },
+      /* contact card now sits on the white page between the skills panel and case 01 */
+      ctaWrapStyle: {
+        position: "relative", zIndex: 1, backgroundColor: paper,
+        padding: m ? "32px 24px 0 24px" : "56px 72px 0 72px", /* + the card's own marginTop = 40 / 72px above, same as below */
+      },
+      toolGroupsStyle: m ? {
+        display: "flex", flexDirection: "column", gap: 12, width: "100%",
+      } : {
+        display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 20, width: "100%",
+      },
+      toolGroupStyle: {
+        display: "flex", flexDirection: "column", gap: m ? 12 : 14, minWidth: 0,
+        backgroundColor: "var(--white)", borderRadius: 12,
+        padding: m ? "20px 20px 22px 20px" : "24px 28px 26px 28px",
+      },
+      toolGroupTitleStyle: Object.assign({}, headline, {
+        fontWeight: 400, fontSize: m ? 18 : 20, lineHeight: 1.2, letterSpacing: "-0.03em",
+      }),
+      toolGroupEmStyle: { fontStyle: "italic", fontWeight: 700 },
+      toolsListStyle: { listStyle: "none", margin: 0, padding: 0, display: "flex", flexWrap: "wrap", gap: 8 },
+      toolChipStyle: {
+        fontFamily: font, fontWeight: 500, fontSize: m ? 14 : 14, lineHeight: 1.3,
+        color: strong, backgroundColor: "var(--surface-sunken)",
+        border: "1px solid var(--border-subtle)", borderRadius: 999, padding: "7px 13px",
+      },
+      skillTitleStyle: Object.assign({}, headline, {
+        fontWeight: 400, fontSize: m ? 22 : 24, lineHeight: 1.15, letterSpacing: "-0.035em", margin: "0 0 14px 0",
+      }),
+      skillTitleEmStyle: { display: "block", fontStyle: "italic", fontWeight: 700 },
+      skillTextStyle: {
+        fontFamily: font, fontWeight: 400, fontSize: 16, lineHeight: 1.6,
+        color: bodyText, margin: 0,
+      },
+      eyebrowStyle: Object.assign({}, label, { whiteSpace: "nowrap" }),
+      /* Contact: rounded navy card = the page's eye-catcher. Yellow label, white headline, solid yellow mail button + yellow-outlined phone button */
+      ctaStyle: {
+        position: "relative", zIndex: 1,
+        display: "flex", flexDirection: m ? "column" : "row", flexWrap: "wrap",
+        alignItems: m ? "flex-start" : "center", justifyContent: "space-between",
+        gap: m ? 18 : "16px 32px", width: "100%", boxSizing: "border-box",
+        padding: m ? "28px 24px" : "36px 40px", /* a bit more weight now that it is the yellow eye-catcher */
+        borderRadius: 16,
+        backgroundColor: "var(--ink-900)",
+        marginTop: m ? 8 : 16,
+      },
+      ctaTextWrapStyle: {
+        display: "flex", flexDirection: "column", gap: 6, minWidth: 0,
+        flex: m ? "0 0 auto" : "1 1 420px",
+      },
+      ctaLabelStyle: {
+        fontFamily: font, fontWeight: 600, fontSize: m ? 13 : 14,
+        letterSpacing: "var(--ls-wide)", textTransform: "uppercase", lineHeight: 1.4, color: "var(--yellow)", margin: 0, /* yellow on navy 7.9:1 */
+      },
+      ctaTextStyle: Object.assign({}, headline, {
+        fontSize: m ? 20 : 24, lineHeight: 1.3, letterSpacing: "-0.025em", color: "#ffffff",
+      }),
+      ctaLinksStyle: {
+        display: "flex", flexDirection: "row", flexWrap: "wrap",
+        gap: 10, flexShrink: 0,
+      },
+      ctaMailStyle: {
+        display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
+        height: 48, padding: "0 22px", borderRadius: 8, border: "1.5px solid var(--yellow)",
+        backgroundColor: "var(--yellow)", color: "var(--ink-900)", /* navy on yellow 7.9:1 */
+        fontFamily: font, fontWeight: 600, fontSize: 16,
+        textDecoration: "none", whiteSpace: "nowrap", boxSizing: "border-box",
+      },
+      ctaPhoneStyle: {
+        display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
+        height: 48, padding: "0 20px", borderRadius: 8, border: "1.5px solid var(--yellow)",
+        backgroundColor: "transparent", color: "#ffffff",
+        fontFamily: font, fontWeight: 600, fontSize: 16,
+        textDecoration: "none", whiteSpace: "nowrap", boxSizing: "border-box",
+      },
+      einblickeStyle: {
+        position: "relative", zIndex: 1, backgroundColor: paper,
+        display: "flex", flexDirection: "column",
+        padding: m ? "40px 24px 0 24px" : "72px 72px 0 72px", /* same gap below the contact card as above it */
+      },
+      case1Style: {
+        position: "relative", zIndex: 1,
+        backgroundColor: paper,
+        display: "flex", flexDirection: "column",
+        gap: m ? 24 : 32,
+        padding: m ? "32px 24px 48px 24px" : "48px 72px 80px 72px", /* sits right under the "Mehr Einblicke" heading */
+        alignItems: "flex-start",
+      },
+      headerStyle: { display: "flex", flexDirection: "column", gap: m ? 8 : 16, alignItems: "flex-start", width: "100%" },
+      eyebrowRowStyle: { display: "flex", flexDirection: "row", gap: 16, alignItems: "center" },
+      eyebrowLineStyle: { width: 160, height: 1, backgroundColor: border, flexShrink: 0 },
+      caseTitleStyle: Object.assign({}, headline, {
+        fontSize: "var(--fs-case-title)", lineHeight: "var(--lh-tight)",
+      }),
+      caseSubtitleStyle: {
+        fontFamily: font, fontWeight: 400, fontSize: "var(--fs-case-sub)",
+        lineHeight: 1.55, color: muted, margin: 0,
+      },
+
+      /* Case 1: bullets left, one curated showcase right (preview + caption + single CTA) */
+      c1GridStyle: m ? {
+        display: "flex", flexDirection: "column", gap: 32, width: "100%",
+      } : {
+        display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 2fr)",
+        gridTemplateAreas: '"bullets video"',
+        columnGap: 56, alignItems: "center", width: "100%",
+      },
+      bulletsStyle: {
+        gridArea: "bullets", order: 1,
+        display: "flex", flexDirection: "column",
+        gap: m ? 16 : 18,
+        alignItems: "flex-start", justifyContent: "center",
+        width: "100%", paddingRight: m ? 0 : 8, boxSizing: "border-box",
+        marginBottom: m ? 12 : 0,
+      },
+      bulletRowStyle1: { display: "flex", flexDirection: "row", gap: 12, alignItems: "flex-start", width: "100%" },
+      bulletDotWrap: { width: 18, paddingTop: "calc(var(--fs-bullet) * 0.9 - 9.75px)", flexShrink: 0, display: "flex" }, /* centers the 18px check on the first text line */
+      bulletTextStyle1: {
+        fontFamily: font, fontWeight: 400, fontSize: "var(--fs-bullet)",
+        lineHeight: 1.6, color: bodyText, flexGrow: 1, margin: 0,
+      },
+      /* first RoyalShrimp bullet ("ohne AI") stands out: semibold in the strong ink colour */
+      bulletTextStrongStyle1: {
+        fontFamily: font, fontWeight: 600, fontSize: "var(--fs-bullet)",
+        lineHeight: 1.6, color: strong, flexGrow: 1, margin: 0,
+      },
+      c1ShowcaseStyle: { gridArea: "video", order: 2, margin: 0, display: "flex", flexDirection: "column", minWidth: 0 },
+      c1PreviewStyle: {
+        display: "block", borderRadius: "16px 16px 0 0", overflow: "hidden",
+        backgroundColor: "#ffffff", textDecoration: "none",
+      },
+      c1BrowserBarStyle: {
+        display: "flex", alignItems: "center", gap: 6,
+        height: m ? 24 : 28, padding: m ? "0 14px" : "0 18px",
+        backgroundColor: "#e6edee", borderBottom: "1px solid #d6e0e2",
+      },
+      c1DotStyle: { width: m ? 7 : 8, height: m ? 7 : 8, borderRadius: "50%", backgroundColor: "#bfcdd0", display: "block" },
+      c1ScreenStyle: {
+        position: "relative", aspectRatio: "16 / 9",
+        backgroundColor: "#e6edee",
+        backgroundImage: previewImg ? "url(" + previewImg + ")" : "none",
+        backgroundSize: "cover", backgroundPosition: "center",
+        display: "flex", alignItems: "center", justifyContent: "center",
+      },
+      /* flat blue-grey play button with navy triangle (3.6:1, decorative icon); hover turns it white */
+      playIconStyle: {
+        width: m ? 68 : 92, height: m ? 68 : 92, borderRadius: "50%", flexShrink: 0,
+        backgroundColor: "var(--blue)",
+        display: "flex", alignItems: "center", justifyContent: "center",
+      },
+      playIconSvgSize: m ? 36 : 48,
+      c1CaptionStyle: {
+        display: "flex", flexDirection: m ? "column" : "row", flexWrap: "wrap",
+        alignItems: m ? "flex-start" : "center", justifyContent: "space-between",
+        gap: m ? 16 : 28, margin: 0,
+        backgroundColor: "var(--surface-sunken)", borderRadius: "0 0 16px 16px",
+        padding: m ? "18px 20px 20px 20px" : "22px 28px",
+      },
+      c1CaptionTextStyle: { display: "flex", flexDirection: "column", gap: 4, minWidth: 0, flex: m ? "0 0 auto" : "1 1 320px" },
+      c1CaptionLabelStyle: {
+        fontFamily: font, fontWeight: 600, fontSize: m ? 13 : 14, letterSpacing: "var(--ls-wide)", textTransform: "uppercase",
+        lineHeight: 1.4, color: strong,
+      },
+      c1CaptionCopyStyle: {
+        fontFamily: font, fontWeight: 400, fontSize: 16, lineHeight: 1.5,
+        color: bodyText,
+      },
+      c1CtaWrapStyle: { display: "flex", flexDirection: "column", alignItems: m ? "flex-start" : "center", gap: 6, flexShrink: 0 },
+      c1CtaBtnStyle: Object.assign({}, pill, { height: 46, padding: m ? "0 28px" : "0 30px", fontSize: m ? 16 : 17 }),
+      c1UtilRowStyle: { display: "flex", alignItems: "center", gap: 8, marginTop: 4 },
+      c1UtilLinkStyle: {
+        fontFamily: font, fontWeight: 500, fontSize: 14, lineHeight: 1.4,
+        color: strong, background: "none", border: "none", padding: 0, cursor: "pointer",
+        textDecoration: "underline", textDecorationColor: "var(--ink-200)", textUnderlineOffset: 3,
+      },
+      c1CtaNoteStyle: {
+        fontFamily: font, fontWeight: 400, fontSize: 13, lineHeight: 1.4,
+        color: muted,
+      },
+
+      case2HeaderStyle: { position: "relative", zIndex: 1, display: "flex", flexDirection: "column", gap: m ? 8 : 16, alignItems: "flex-start", width: "100%" },
+      case2EyebrowRowStyle: { display: "flex", flexDirection: "row", gap: 16, alignItems: "center" },
+      case2EyebrowStyle: Object.assign({}, label, { whiteSpace: "nowrap" }),
+      case2EyebrowLineStyle: { width: 160, height: 1, backgroundColor: border, flexShrink: 0 },
+      case2TitleStyle: Object.assign({}, headline, {
+        fontSize: "var(--fs-case-title)", lineHeight: "var(--lh-tight)",
+      }),
+      case2SubtitleStyle: {
+        fontFamily: font, fontWeight: 400, fontSize: "var(--fs-case-sub)",
+        lineHeight: 1.55, color: muted, margin: 0,
+      },
+      case2BulletDotWrap: { width: 18, paddingTop: "calc(var(--fs-bullet) * 0.9 - 9.75px)", flexShrink: 0, display: "flex" },
+
+      case2Style: {
+        position: "relative",
+        backgroundColor: "var(--surface-sunken)", borderRadius: m ? 16 : 24, marginBottom: m ? 40 : 72, /* air before the navy footer */
+        display: "flex", flexDirection: "column",
+        gap: m ? 24 : 20,
+        padding: m ? "56px 24px 56px 24px" : "96px 72px 96px 72px", /* grey panels: unified 96px top/bottom */
+        alignItems: "flex-start", overflow: "hidden",
+      },
+      case2ContentRowStyle: {
+        position: "relative", zIndex: 1,
+        display: "flex", flexDirection: m ? "column" : "row",
+        gap: m ? 24 : 40, alignItems: m ? "flex-start" : "center", width: "100%",
+      },
+      cuplyImgStyle: {
+        width: m ? "100%" : 432, height: m ? 428 : 540,
+        borderRadius: 16, objectFit: "cover",
+        flexShrink: 0,
+      },
+      case2RightColStyle: {
+        display: "flex", flexDirection: "column", gap: 20,
+        width: m ? "100%" : 540, alignItems: "flex-start",
+      },
+      bulletsStyle2: { display: "flex", flexDirection: "column", gap: m ? 14 : 26, width: "100%" },
+      bulletRowStyle2: { display: "flex", flexDirection: "row", gap: 16, alignItems: "flex-start", width: "100%" },
+      bulletTextStyle2: {
+        fontFamily: font, fontWeight: 400, fontSize: "var(--fs-bullet)",
+        lineHeight: 1.6, color: bodyText, flexGrow: 1, margin: 0,
+      },
+      caseNoteStyle: {
+        fontFamily: font, fontWeight: 400, fontSize: "var(--fs-caption)", lineHeight: 1.5,
+        color: muted, margin: m ? "-4px 0 0 0" : "-8px 0 0 0",
+      },
+      primaryBtnStyle: Object.assign({}, pill, { height: 48, padding: m ? "0 36px" : "0 48px", fontSize: m ? 17 : 18 }),
+
+      /* AI projects: three big gallery cards, Orbit + Keyboard side by side, then four compact "Außerdem gebaut" tiles (2 x 2) */
+      aiStyle: {
+        position: "relative", zIndex: 1, backgroundColor: paper,
+        display: "flex", flexDirection: "column", gap: m ? 28 : 48,
+        padding: m ? "8px 24px 64px 24px" : "0 72px 104px 72px",
+      },
+      /* soft blue-grey glow + faded square grid behind the cards */
+      aiWrapStyle: { position: "relative", width: "100%" },
+      aiBgStyle: {
+        position: "absolute", inset: m ? "-40px -24px" : "-120px -72px -112px -72px", zIndex: 0, pointerEvents: "none",
+        backgroundImage: "linear-gradient(#dbe4e6 2px, transparent 2px), linear-gradient(90deg, #dbe4e6 2px, transparent 2px), radial-gradient(ellipse at center, rgba(106,146,170,0.16) 0%, rgba(28,54,96,0.06) 40%, rgba(255,255,255,0) 72%)",
+        backgroundSize: (m ? "72px 72px, 72px 72px" : "112px 112px, 112px 112px") + ", 100% 100%",
+        backgroundPosition: "center",
+        WebkitMaskImage: "radial-gradient(ellipse at center, #000 45%, transparent 82%)",
+        maskImage: "radial-gradient(ellipse at center, #000 45%, transparent 82%)",
+      },
+      aiStackStyle: { position: "relative", zIndex: 1, display: "flex", flexDirection: "column", gap: m ? 14 : 20, width: "100%" },
+      /* Teil 1: three big cards side by side (stacked on mobile); preview on top, full bleed */
+      projGridStyle: m
+        ? { listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }
+        : { listStyle: "none", margin: 0, padding: 0, display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 20 },
+      projPreviewStyle: { position: "relative", aspectRatio: "16 / 10", overflow: "hidden", backgroundColor: "#eaf0f4", borderBottom: "1px solid #e1e8ed" },
+      projBodyStyle: { display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 12, flex: 1, padding: m ? "20px 22px 24px 22px" : "24px 28px 28px 28px" },
+      projTitleStyle: Object.assign({}, headline, { fontWeight: 600, fontSize: m ? 19 : 21, lineHeight: 1.25, letterSpacing: "-0.03em" }),
+      projOneLinerStyle: { fontFamily: font, fontWeight: 500, fontSize: m ? 16 : 17, lineHeight: 1.5, color: strong, margin: 0 },
+      projBulletsStyle: { listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 8 },
+      projBulletStyle: { position: "relative", paddingLeft: 18, fontFamily: font, fontWeight: 400, fontSize: 15, lineHeight: 1.55, color: bodyText },
+      cardStretchBtnStyle: {
+        appearance: "none", background: "none", border: 0, padding: 0, margin: 0,
+        font: "inherit", color: "inherit", letterSpacing: "inherit", textAlign: "left", cursor: "pointer",
+      },
+      aiHintStyle: { marginTop: "auto", paddingTop: 6, fontFamily: font, fontWeight: 600, fontSize: 15, lineHeight: 1.4, color: ink },
+      /* Teil 2: Orbit + Keyboard, two equal cards; the 2-column grid uses the same gap as the tiles below so the edges line up */
+      duoGridStyle: m
+        ? { listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }
+        : { listStyle: "none", margin: 0, padding: 0, display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 20 },
+      duoCardStyle: {
+        position: "relative", display: "flex", flexDirection: "column", minWidth: 0, overflow: "hidden", cursor: "pointer",
+        backgroundColor: "var(--white)", border: "1px solid #e1e8ed", borderRadius: 16,
+      },
+      duoPreviewStyle: { position: "relative", aspectRatio: "16 / 9", overflow: "hidden", backgroundColor: "#eaf0f4", borderBottom: "1px solid #e1e8ed" },
+      /* second, quieter paragraph: body-text size and colour, like the bullets */
+      duoNoteStyle: { fontFamily: font, fontWeight: 400, fontSize: 15, lineHeight: 1.6, color: bodyText, margin: 0 },
+      /* Teil 3: four compact tiles, 2 x 2 on desktop, same columns and gap as Orbit/Keyboard above */
+      moreWrapStyle: { display: "flex", flexDirection: "column", gap: 14, marginTop: m ? 18 : 28 },
+      moreHeadStyle: Object.assign({}, label, { fontSize: m ? 13 : 14 }),
+      moreGridStyle: m
+        ? { listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 10 }
+        : { listStyle: "none", margin: 0, padding: 0, display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gridAutoRows: "1fr", gap: 20 },
+      /* overlay: navy frame; stage keeps one fixed height so arrows never jump between portrait and landscape images */
+      dlgStyle: {
+        width: m ? "calc(100vw - 16px)" : "min(1240px, calc(100vw - 96px))", maxWidth: "none", maxHeight: "calc(100vh - 24px)",
+        padding: m ? "0 0 14px 0" : "0 0 22px 0", border: 0, borderRadius: m ? 16 : 20, backgroundColor: "var(--ink-900)", color: "#ffffff", overflow: "auto",
+      },
+      dlgBarStyle: { display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, padding: m ? "10px 10px 6px 18px" : "14px 14px 8px 26px" },
+      dlgTitleStyle: { fontFamily: font, fontWeight: 600, fontSize: m ? 15 : 16, lineHeight: 1.4, color: "#ffffff", margin: 0 },
+      dlgCountStyle: { fontWeight: 400, color: "#a9bcc2", marginLeft: 8 },
+      dlgCloseStyle: {
+        display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+        width: 40, height: 40, borderRadius: 999, border: 0, cursor: "pointer", backgroundColor: "rgba(255,255,255,0.12)", color: "#ffffff",
+      },
+      dlgStageStyle: { display: "flex", alignItems: "center", gap: m ? 6 : 16, padding: m ? "4px 8px" : "6px 22px", height: stageH, boxSizing: "content-box" },
+      dlgFrameAreaStyle: { flex: 1, minWidth: 0, height: "100%", display: "flex", alignItems: "center", justifyContent: "center" },
+      dlgArrowStyle: {
+        display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+        width: m ? 36 : 46, height: m ? 36 : 46, borderRadius: 999, border: 0, cursor: "pointer", backgroundColor: "rgba(255,255,255,0.12)", color: "#ffffff",
+      },
+      browserBarStyle: { display: "flex", alignItems: "center", gap: 6, height: 30, padding: "0 12px", backgroundColor: "#e2e9eb" },
+      browserDotStyle: { display: "block", width: 9, height: 9, borderRadius: 999, backgroundColor: "#c3cfd3" },
+      dlgCaptionStyle: { fontFamily: font, fontWeight: 400, fontSize: m ? 14 : 15, lineHeight: 1.5, color: "#d3dee1", textAlign: "center", margin: m ? "12px 18px 0 18px" : "16px auto 0 auto", maxWidth: 760, minHeight: "1.5em" },
+      dotsStyle: { display: "flex", justifyContent: "center", gap: 2, marginTop: m ? 6 : 8 },
+      dotBtnStyle: { display: "inline-flex", alignItems: "center", justifyContent: "center", width: 28, height: 28, padding: 0, border: 0, borderRadius: 999, backgroundColor: "transparent", cursor: "pointer" },
+
+      /* Footer in Kijimea navy with rounded top; left = white wordmark (blue-grey dot) + white copy (12:1);
+         right = deeper navy panel (#142a4d) with a blue-grey swoosh carrying the contact links (14.3:1); bottom bars with a hairline above */
+      footerStyle: {
+        position: "relative", overflow: "hidden",
+        backgroundColor: "var(--ink-900)",
+        borderRadius: m ? "16px 16px 0 0" : "24px 24px 0 0",
+        display: m ? "flex" : "grid", flexDirection: "column",
+        gridTemplateColumns: "minmax(0, 1fr) minmax(400px, 36%)", /* one contact column only */
+      },
+      footerArcsStyle: {
+        position: "absolute", left: 0, top: 0, zIndex: 0, pointerEvents: "none",
+        width: m ? "100%" : "56%", height: "100%",
+      },
+      footerMainStyle: {
+        position: "relative", zIndex: 1,
+        display: "flex", flexDirection: "column", gap: m ? 24 : 0, minWidth: 0,
+        padding: m ? "40px 24px 72px 24px" : "64px 48px 36px 72px",
+      },
+      footerBrandStyle: { display: "flex", flexDirection: "column", gap: m ? 12 : 16, maxWidth: 480, marginBottom: m ? 0 : 72 },
+      footerNameStyle: {
+        fontFamily: display, fontWeight: 700, fontSize: m ? 24 : 30, letterSpacing: "-0.03em",
+        lineHeight: 1.1, color: "#ffffff",
+      },
+      footerDotStyle: { color: "var(--blue)" },
+      footerAboutStyle: {
+        fontFamily: font, fontWeight: 500, fontSize: m ? 14 : 15, lineHeight: 1.6,
+        color: "#ffffff", margin: 0,
+      },
+      footerBarLeftStyle: {
+        display: m ? "none" : "block",
+        marginTop: "auto", paddingTop: 20, borderTop: "1px solid rgba(255,255,255,0.25)",
+        fontFamily: font, fontWeight: 500, fontSize: 14, lineHeight: 1.5, color: "#ffffff",
+      },
+      footerPanelStyle: {
+        position: "relative", zIndex: 1, backgroundColor: "var(--navy-deep)",
+        display: "flex", flexDirection: "column", gap: m ? 32 : 0, minWidth: 0,
+        padding: m ? "8px 24px 32px 24px" : "64px 72px 36px 24px",
+      },
+      footerCurveDesktopStyle: {
+        display: m ? "none" : "block", position: "absolute",
+        top: 0, bottom: 0, left: -219, width: 220, height: "100%", pointerEvents: "none",
+      },
+      footerCurveMobileStyle: {
+        display: m ? "block" : "none", position: "absolute",
+        left: 0, right: 0, top: -47, width: "100%", height: 48, pointerEvents: "none",
+      },
+      footerColsStyle: {
+        position: "relative", display: "flex", flexDirection: "row", flexWrap: "wrap",
+        gap: m ? "28px 48px" : "32px 64px", justifyContent: m ? "flex-start" : "flex-end",
+        marginBottom: m ? 0 : 72,
+      },
+      footerColStyle: { display: "flex", flexDirection: "column", gap: 10, minWidth: 0, alignItems: m ? "flex-start" : "flex-end", textAlign: m ? "left" : "right" },
+      footerColHeadStyle: {
+        fontFamily: font, fontWeight: 600, fontSize: m ? 15 : 16, lineHeight: 1.4, letterSpacing: "-0.01em",
+        color: "#ffffff", marginBottom: 4,
+      },
+      footerLinkStyle: { fontFamily: font, fontWeight: 400, fontSize: m ? 15 : 15, lineHeight: 1.5 },
+      footerBarRightStyle: {
+        position: "relative",
+        display: "flex", flexDirection: m ? "column" : "row", justifyContent: m ? "flex-start" : "flex-end", gap: m ? 6 : 0,
+        marginTop: m ? 0 : "auto", paddingTop: 20, borderTop: "1px solid rgba(255,255,255,0.3)",
+        fontFamily: font, fontWeight: 500, fontSize: 14, lineHeight: 1.5, color: "#ffffff",
+      },
+      footerCopyMobileStyle: { display: m ? "block" : "none" },
+      footerHeartStyle: { display: "inline-block", verticalAlign: "-1px", margin: "0 1px" },
+    };
+  }
+}
+
+</script>
+</body>
+</html>
