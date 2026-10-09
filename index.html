@@ -91,6 +91,8 @@
     .footer-link { color: #ffffff; text-decoration: none; }
     .footer-link:hover { color: #ffffff; text-decoration: underline; text-decoration-color: #ffffff; text-underline-offset: 4px; }
     .footer-link:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
+    /* hero capsules: up to 1440px the blister bleeds off the screen edge; on wider screens the page ends mid-air, so the cut right edge fades out */
+    @media (min-width: 1441px) { .hero-pills { -webkit-mask-image: linear-gradient(to left, transparent 0, #000 12%); mask-image: linear-gradient(to left, transparent 0, #000 12%); } }
   </style>
 </helmet>
 <div style="{{ pageStyle }}">
@@ -107,9 +109,10 @@
         <h1 style="{{ h1Style }}"><span style="{{ h1AccentStyle }}">Prompts bauen.</span> Workflows automatisieren. <em style="{{ h1EmStyle }}">Content skalieren.</em></h1>
         <p style="{{ heroLeadStyle }}">Was ich dafür mitbringe und wie ich es bei Kijimea umsetzen würde.</p>
       </div>
-      <!-- Kijimea capsules spilling from a blister (cut-out PNG from the user): desktop = top right under the nav, falling into the white space beside the headline;
-           blister edges dissolve to the top and right so there is never a hard image edge; mobile = in the flow under the intro line, bleeding off the right edge -->
-      <img src="assets/kijimea-kapseln.webp" alt="" width="929" height="676" decoding="async" style="{{ heroPillsStyle }}" />
+      <!-- Kijimea capsules spilling from a blister (cut-out PNG from the user, turned 10° clockwise and re-cut straight at top and right): desktop = the blister slides out from under the full-width header hairline
+           (crisp top edge on the line) and bleeds off the right edge, capsules fall into the white space beside the headline;
+           mobile = in the flow under the intro line, bleeding off the right edge, top edge softened (no line to sit on there) -->
+      <img src="assets/kijimea-kapseln.webp" alt="" width="961" height="512" decoding="async" class="hero-pills" style="{{ heroPillsStyle }}" />
     </header>
 
     <section id="ueber-mich" aria-label="Kurz über mich" style="{{ aboutSectionStyle }}">
@@ -772,29 +775,29 @@ class Component extends DCLogic {
       },
 
       heroIntroWrapStyle: { position: "relative" },
-      /* soft edge only where the blister is cut (top + right); the loose capsules stay fully crisp */
-      heroPillsStyle: Object.assign(m ? {
+      /* desktop: top edge sits exactly on the header hairline (32 padding + 42 logo row + 24 + 1px line = 99; top 98 tucks the first pixel row under the line) */
+      heroPillsStyle: m ? {
         display: "block", alignSelf: "flex-end", width: "74%", height: "auto",
         margin: "-12px -24px -28px 0", pointerEvents: "none",
+        WebkitMaskImage: "linear-gradient(to bottom, transparent 0, #000 20%)", maskImage: "linear-gradient(to bottom, transparent 0, #000 20%)",
       } : {
-        position: "absolute", zIndex: 0, top: 92, right: 0, pointerEvents: "none",
+        position: "absolute", zIndex: 0, top: 98, right: 0, pointerEvents: "none",
         width: "min(560px, 39vw)", height: "auto",
-      }, {
-        WebkitMaskImage: "linear-gradient(to bottom, transparent 0, #000 20%), linear-gradient(to left, transparent 0, #000 12%)",
-        maskImage: "linear-gradient(to bottom, transparent 0, #000 20%), linear-gradient(to left, transparent 0, #000 12%)",
-        WebkitMaskComposite: "source-in", maskComposite: "intersect",
-      }),
+      },
       /* Hero: header row (wordmark | nav), then kicker, two-tone headline and a calm intro line */
       heroStyle: {
         position: "relative", zIndex: 1,
         display: "flex", flexDirection: "column",
-        gap: m ? 40 : 80,
+        gap: m ? 40 : 56, /* desktop: 24px row padding + line + 56 = same text position as before */
         padding: m ? "26px 24px 4px 24px" : "32px 72px 16px 72px",
       },
       heroTopRowStyle: {
         display: "flex", flexDirection: m ? "column" : "row", flexWrap: "wrap",
         alignItems: m ? "flex-start" : "center", justifyContent: "space-between",
         gap: m ? 20 : 24, position: "relative", zIndex: 1,
+        /* desktop: full-width hairline under logo + nav, the edge the capsule blister comes out from under */
+        margin: m ? 0 : "0 -72px", padding: m ? 0 : "0 72px 24px 72px",
+        borderBottom: m ? "none" : "1px solid var(--border-subtle)",
       },
       /* company logo top left (as on the Mehr Ampere / AkuRat pages); the user's own wordmark lives in the footer */
       heroLogoStyle: { display: "block", height: m ? 32 : 42, width: "auto" },
