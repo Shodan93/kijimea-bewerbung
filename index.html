@@ -96,18 +96,6 @@
 <div style="{{ pageStyle }}">
 
   <div style="{{ heroIntroWrapStyle }}">
-    <!-- decorative flat blue-grey circles, a quiet nod to the microbiome / capsule motif on kijimea.de (no gradient) -->
-    <svg style="{{ swooshStyle }}" viewBox="0 0 900 560" preserveAspectRatio="xMaxYMin slice" aria-hidden="true" focusable="false">
-      <circle cx="720" cy="170" r="210" fill="none" stroke="#6a92aa" stroke-width="2" opacity="0.18"></circle>
-      <circle cx="720" cy="170" r="150" fill="#6a92aa" opacity="0.10"></circle>
-      <circle cx="850" cy="40" r="92" fill="#6a92aa" opacity="0.08"></circle>
-      <circle cx="560" cy="330" r="58" fill="#6a92aa" opacity="0.09"></circle>
-      <circle cx="868" cy="330" r="38" fill="#4a7590" opacity="0.10"></circle>
-      <circle cx="610" cy="70" r="22" fill="#6a92aa" opacity="0.16"></circle>
-      <circle cx="470" cy="190" r="13" fill="#6a92aa" opacity="0.18"></circle>
-      <circle cx="770" cy="430" r="17" fill="#6a92aa" opacity="0.14"></circle>
-      <circle cx="420" cy="60" r="8" fill="#4a7590" opacity="0.16"></circle>
-    </svg>
 
     <header style="{{ heroStyle }}">
       <div style="{{ heroTopRowStyle }}">
@@ -119,6 +107,9 @@
         <h1 style="{{ h1Style }}"><span style="{{ h1AccentStyle }}">Prompts bauen.</span> Workflows automatisieren. <em style="{{ h1EmStyle }}">Content skalieren.</em></h1>
         <p style="{{ heroLeadStyle }}">Was ich dafür mitbringe und wie ich es bei Kijimea umsetzen würde.</p>
       </div>
+      <!-- Kijimea capsules spilling from a blister (cut-out PNG from the user): desktop = top right under the nav, falling into the white space beside the headline;
+           blister edges dissolve to the top and right so there is never a hard image edge; mobile = in the flow under the intro line, bleeding off the right edge -->
+      <img src="assets/kijimea-kapseln.webp" alt="" width="929" height="676" decoding="async" style="{{ heroPillsStyle }}" />
     </header>
 
     <section id="ueber-mich" aria-label="Kurz über mich" style="{{ aboutSectionStyle }}">
@@ -781,11 +772,18 @@ class Component extends DCLogic {
       },
 
       heroIntroWrapStyle: { position: "relative" },
-      swooshStyle: {
-        position: "absolute", top: 0, right: 0, zIndex: 0, pointerEvents: "none",
-        width: m ? "100%" : "min(60%, 880px)", height: m ? 300 : 560,
-        opacity: m ? 0.5 : 1,
-      },
+      /* soft edge only where the blister is cut (top + right); the loose capsules stay fully crisp */
+      heroPillsStyle: Object.assign(m ? {
+        display: "block", alignSelf: "flex-end", width: "74%", height: "auto",
+        margin: "-12px -24px -28px 0", pointerEvents: "none",
+      } : {
+        position: "absolute", zIndex: 0, top: 92, right: 0, pointerEvents: "none",
+        width: "min(560px, 39vw)", height: "auto",
+      }, {
+        WebkitMaskImage: "linear-gradient(to bottom, transparent 0, #000 20%), linear-gradient(to left, transparent 0, #000 12%)",
+        maskImage: "linear-gradient(to bottom, transparent 0, #000 20%), linear-gradient(to left, transparent 0, #000 12%)",
+        WebkitMaskComposite: "source-in", maskComposite: "intersect",
+      }),
       /* Hero: header row (wordmark | nav), then kicker, two-tone headline and a calm intro line */
       heroStyle: {
         position: "relative", zIndex: 1,
@@ -796,7 +794,7 @@ class Component extends DCLogic {
       heroTopRowStyle: {
         display: "flex", flexDirection: m ? "column" : "row", flexWrap: "wrap",
         alignItems: m ? "flex-start" : "center", justifyContent: "space-between",
-        gap: m ? 20 : 24,
+        gap: m ? 20 : 24, position: "relative", zIndex: 1,
       },
       /* company logo top left (as on the Mehr Ampere / AkuRat pages); the user's own wordmark lives in the footer */
       heroLogoStyle: { display: "block", height: m ? 32 : 42, width: "auto" },
@@ -805,18 +803,18 @@ class Component extends DCLogic {
         fontFamily: font, fontWeight: 500, fontSize: m ? 15 : 16, lineHeight: 1.4,
         color: strong,
       },
-      heroTextStyle: { display: "flex", flexDirection: "column", gap: m ? 14 : 22, maxWidth: 1200 },
+      heroTextStyle: { position: "relative", zIndex: 1, display: "flex", flexDirection: "column", gap: m ? 14 : 22, maxWidth: m ? 1200 : "calc(100% - min(560px, 39vw) + 72px)" }, /* desktop: text column stops where the capsules begin */
       heroLeadStyle: {
         fontFamily: font, fontWeight: 400, fontSize: m ? 17 : 20, lineHeight: 1.6,
-        color: bodyText, margin: m ? "6px 0 0 0" : "10px 0 0 0", maxWidth: 1200,
+        color: bodyText, margin: m ? "6px 0 0 0" : "10px 0 0 0", maxWidth: 1200, textWrap: "balance", /* no orphan word when the line wraps */
       },
       heroKickerStyle: Object.assign({}, label, { fontSize: m ? 13 : 15 }),
       h1Style: Object.assign({}, headline, {
         fontWeight: 700,
-        fontSize: m ? "calc((100vw - 48px) / 9.6)" : "min(54px, calc((100vw - 144px) / 22.5))", /* desktop: "Prompts bauen. Workflows automatisieren." (~21.2em) stays on one line inside the 1200px text column */
+        fontSize: m ? "calc((100vw - 48px) / 9.6)" : "min(56px, calc((61vw - 72px) / 14.6))", /* desktop: three stacked lines; the longest, "Workflows automatisieren." (~14.2em), fits left of the capsules */
         lineHeight: 1.04,
       }),
-      h1AccentStyle: { color: accent },
+      h1AccentStyle: { display: "block", color: accent },
       h1EmStyle: { display: "block", fontStyle: "italic", fontWeight: 600, color: strong },
 
       /* "Kurz über mich": large 4:5 portrait with a flat navy block offset behind it, copy left, key facts underneath */
