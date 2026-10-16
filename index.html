@@ -141,10 +141,10 @@
       </aside>
       <!-- Kijimea animation (1280x720, 4 s loop, no audio track): no caption, centred, max 780px wide. Muted autoplay is started in componentDidMount
            only while the video is near the viewport and only without prefers-reduced-motion; otherwise the poster (= first frame) stays. -->
-      <div style="{{ animWrapStyle }}">
+      <div style="{{ animWrapStyle }}"><div style="{{ animFrameStyle }}">
         <video id="kijimea-anim" src="assets/kijimea-animation.mp4" poster="assets/kijimea-animation-poster.jpg" width="1280" height="720"
                muted loop playsinline preload="none" disablepictureinpicture aria-label="Animation: eine Darm-Figur und eine Kijimea-Kapsel winken, Sprechblase „KI-Content? Svenja hat Ideen!“" style="{{ animVideoStyle }}"></video>
-      </div>
+      </div></div>
     </section>
 
     <section id="ai-projekte" aria-labelledby="ai-title" style="{{ aiStyle }}">
@@ -923,9 +923,16 @@ class Component extends DCLogic {
       /* animation: centred, max 780px, 16:9 reserved up front (no layout shift); background = the video's own navy so nothing flashes while loading;
          same 16px radius as the other media on the page, no border or shadow. 16 / 8px extra on top = 72 / 40px below the "Mein Bezug" card */
       animWrapStyle: { display: "flex", justifyContent: "center", width: "100%", marginTop: m ? 8 : 16 },
+      /* frame keeps the box exactly as before (max 780px, 16:9, radius); the video inside is zoomed 12 % around its centre,
+         so the same amount is trimmed on all four sides (figures and speech bubble keep plenty of margin: max safe zoom ~1.5) */
+      animFrameStyle: {
+        width: "100%", maxWidth: 780, aspectRatio: "16 / 9", overflow: "hidden",
+        backgroundColor: "#182e50", borderRadius: m ? 12 : 16,
+      },
       animVideoStyle: {
-        display: "block", width: "100%", maxWidth: 780, height: "auto", aspectRatio: "16 / 9",
-        objectFit: "contain", backgroundColor: "#182e50", borderRadius: m ? 12 : 16,
+        display: "block", width: "100%", height: "100%",
+        objectFit: "contain", backgroundColor: "#182e50",
+        transform: "scale(1.12)", transformOrigin: "50% 50%",
       },
       factNumStyle: Object.assign({}, headline, {
         fontSize: m ? 34 : 42, lineHeight: 1.05, color: accent, whiteSpace: "nowrap",
