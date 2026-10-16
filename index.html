@@ -139,6 +139,12 @@
         <span style="{{ bezugLabelStyle }}">Mein Bezug zur Stelle</span>
         <p style="{{ bezugTextStyle }}">Bildsprache habe ich von Grund auf <em style="{{ bezugEmStyle }}">gelernt.</em> Als Fotomedienfachfrau und Grafikdesignerin sehe ich schnell, ob ein Bild zu Marke, Kanal und Zielgruppe passt, egal ob fotografiert oder mit AI generiert.</p>
       </aside>
+      <!-- Kijimea animation (1280x720, 4 s loop, no audio track): no caption, centred, max 780px wide. Muted autoplay is started in componentDidMount
+           only while the video is near the viewport and only without prefers-reduced-motion; otherwise the poster (= first frame) stays. -->
+      <div style="{{ animWrapStyle }}">
+        <video id="kijimea-anim" src="assets/kijimea-animation.mp4" poster="assets/kijimea-animation-poster.jpg" width="1280" height="720"
+               muted loop playsinline preload="none" disablepictureinpicture aria-label="Animation: eine Darm-Figur und eine Kijimea-Kapsel winken, Sprechblase „KI-Content? Svenja hat Ideen!“" style="{{ animVideoStyle }}"></video>
+      </div>
     </section>
 
     <section id="ai-projekte" aria-labelledby="ai-title" style="{{ aiStyle }}">
@@ -517,11 +523,34 @@ class Component extends DCLogic {
       stage.addEventListener("touchstart", this._onTouchStart, { passive: true });
       stage.addEventListener("touchend", this._onTouchEnd, { passive: true });
     }
+    this.setupAnim();
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this._onResize);
     document.removeEventListener("keydown", this._onKey);
+    if (this._animIO) this._animIO.disconnect();
   }
+
+  /* animation video: muted inline loop, loaded and played only near the viewport, paused off-screen;
+     with prefers-reduced-motion it never autoplays and the poster (first frame) stays visible */
+  setupAnim = () => {
+    const v = document.getElementById("kijimea-anim");
+    if (!v) return;
+    v.muted = true; v.defaultMuted = true; v.playsInline = true; v.loop = true;
+    v.setAttribute("muted", ""); v.setAttribute("playsinline", ""); v.removeAttribute("controls");
+    const rm = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+    let near = false;
+    const sync = () => {
+      if (rm && rm.matches) { if (!v.paused) v.pause(); return; }
+      if (near) { if (v.preload !== "auto") v.preload = "auto"; const pr = v.play(); if (pr && pr.catch) pr.catch(() => {}); }
+      else if (!v.paused) v.pause();
+    };
+    if ("IntersectionObserver" in window) {
+      this._animIO = new IntersectionObserver((es) => { near = es[0].isIntersecting; sync(); }, { rootMargin: "300px 0px" });
+      this._animIO.observe(v);
+    } else { near = true; sync(); }
+    if (rm) { if (rm.addEventListener) rm.addEventListener("change", sync); else if (rm.addListener) rm.addListener(sync); }
+  };
 
   copyLink1 = () => {
     const text = "https://drive.google.com/file/d/1ZM4CWZ1CJGp5d3qtxk0aSyLfXs3kVGFF/view?usp=sharing";
@@ -891,6 +920,13 @@ class Component extends DCLogic {
         color: strong, margin: 0,
       },
       bezugEmStyle: { fontStyle: "italic", fontWeight: 700 },
+      /* animation: centred, max 780px, 16:9 reserved up front (no layout shift); background = the video's own navy so nothing flashes while loading;
+         same 16px radius as the other media on the page, no border or shadow. 16 / 8px extra on top = 72 / 40px below the "Mein Bezug" card */
+      animWrapStyle: { display: "flex", justifyContent: "center", width: "100%", marginTop: m ? 8 : 16 },
+      animVideoStyle: {
+        display: "block", width: "100%", maxWidth: 780, height: "auto", aspectRatio: "16 / 9",
+        objectFit: "contain", backgroundColor: "#182e50", borderRadius: m ? 12 : 16,
+      },
       factNumStyle: Object.assign({}, headline, {
         fontSize: m ? 34 : 42, lineHeight: 1.05, color: accent, whiteSpace: "nowrap",
       }),
