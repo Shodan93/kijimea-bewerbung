@@ -367,7 +367,7 @@
             <h2 id="kontakt-title" style="{{ ctaTextStyle }}">Hab ich euch überzeugen können?<br /> Ich freue mich auf ein Gespräch mit&nbsp;euch.</h2>
           </div>
           <div style="{{ ctaLinksStyle }}">
-            <a href="{{ mailHref }}" class="cta-mail" aria-label="{{ mailAria }}" style="{{ ctaMailStyle }}"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg><span>E-Mail schreiben</span></a>
+            <button type="button" class="cta-mail" aria-label="{{ mailCopyAria }}" onClick="{{ copyMail }}" style="{{ ctaMailStyle }}"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg><span style="{{ mailSwapStyle }}"><span style="{{ mailAddrStyle }}">{{ mailText }}</span><span style="{{ mailDoneStyle }}" aria-hidden="true">Kopiert ✓</span></span></button><span style="{{ srOnlyStyle }}" aria-live="polite">{{ mailCopiedMsg }}</span>
             <a href="{{ telHref }}" class="cta-phone" aria-label="{{ telAria }}" style="{{ ctaPhoneStyle }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span>{{ telText }}</span></a>
           </div>
         </section>
@@ -499,6 +499,7 @@ class Component extends DCLogic {
   state = {
     isMobile: typeof window !== "undefined" ? window.innerWidth <= 859 : false,
     copied1: false,
+    copiedMail: false,
     gallery: null, /* { k: project key, i: slide index } while the overlay is open */
   };
 
@@ -558,6 +559,19 @@ class Component extends DCLogic {
       this._animIO.observe(v);
     } else { near = true; sync(); }
     if (rm) { if (rm.addEventListener) rm.addEventListener("change", sync); else if (rm.addListener) rm.addListener(sync); }
+  };
+
+  /* contact button: copies the address instead of opening a mail program (which may pick an old sender account) */
+  copyMail = () => {
+    const text = atob("c3ZlbmphLm11bWVsdGVyQGdteC5kZQ==");
+    const fallback = () => {
+      const ta = document.createElement("textarea"); ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); } catch (e) {} document.body.removeChild(ta);
+    };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).catch(fallback); else fallback();
+    this.setState({ copiedMail: true });
+    clearTimeout(this._tm);
+    this._tm = setTimeout(() => this.setState({ copiedMail: false }), 1800);
   };
 
   copyLink1 = () => {
@@ -793,6 +807,12 @@ class Component extends DCLogic {
       dlgTitle: g ? this.projects[g.k].title : "", dlgCount: gSlides.length > 1 ? (g.i + 1) + " / " + gSlides.length : "",
       copyLabel1: this.state.copied1 ? "Link kopiert ✓" : "Link kopieren",
       mailHref: "mailto:" + mail, mailText: mail, mailAria: "E-Mail an " + mail + " schreiben",
+      copyMail: this.copyMail, mailCopyAria: "E-Mail-Adresse " + mail + " kopieren", mailCopiedMsg: this.state.copiedMail ? "E-Mail-Adresse kopiert" : "",
+      /* address and "Kopiert" share one grid cell, so the button keeps its width while the label swaps */
+      mailSwapStyle: { display: "inline-grid" },
+      mailAddrStyle: { gridArea: "1 / 1", visibility: this.state.copiedMail ? "hidden" : "visible", userSelect: "all" },
+      mailDoneStyle: { gridArea: "1 / 1", visibility: this.state.copiedMail ? "visible" : "hidden", textAlign: "center" },
+      srOnlyStyle: { position: "absolute", width: 1, height: 1, overflow: "hidden", clip: "rect(0 0 0 0)", whiteSpace: "nowrap" },
       telHref: "tel:" + telIntl, telText: telShown, telAria: "Svenja Mumelter anrufen: " + telShown,
       copyLink1: this.copyLink1,
       closeGallery: this.closeGallery, onDialogBackdrop: this.onDialogBackdrop,
@@ -1091,7 +1111,7 @@ class Component extends DCLogic {
         height: 48, padding: "0 22px", borderRadius: 8, border: "1.5px solid var(--yellow)",
         backgroundColor: "var(--yellow)", color: "var(--ink-900)", /* navy on yellow 7.9:1 */
         fontFamily: font, fontWeight: 600, fontSize: 16,
-        textDecoration: "none", whiteSpace: "nowrap", boxSizing: "border-box",
+        textDecoration: "none", whiteSpace: "nowrap", boxSizing: "border-box", cursor: "pointer",
       },
       ctaPhoneStyle: {
         display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
