@@ -1265,8 +1265,11 @@ class Component extends DCLogic {
         backgroundImage: "linear-gradient(#dbe4e6 2px, transparent 2px), linear-gradient(90deg, #dbe4e6 2px, transparent 2px), radial-gradient(ellipse at center, rgba(106,146,170,0.16) 0%, rgba(28,54,96,0.06) 40%, rgba(255,255,255,0) 72%)",
         backgroundSize: (m ? "72px 72px, 72px 72px" : "112px 112px, 112px 112px") + ", 100% 100%",
         backgroundPosition: "center",
-        WebkitMaskImage: "radial-gradient(ellipse at center, #000 45%, transparent 82%)",
-        maskImage: "radial-gradient(ellipse at center, #000 45%, transparent 82%)",
+        /* second mask: the grid stops exactly at the bottom edge of the last tiles (box bottom minus the 112 / 40px overhang),
+           so the white gap before the grey skills panel stays clean and the two blocks read as separate */
+        WebkitMaskImage: "radial-gradient(ellipse at center, #000 45%, transparent 82%), linear-gradient(to bottom, #000 calc(100% - " + (m ? 64 : 136) + "px), transparent calc(100% - " + (m ? 40 : 112) + "px))",
+        maskImage: "radial-gradient(ellipse at center, #000 45%, transparent 82%), linear-gradient(to bottom, #000 calc(100% - " + (m ? 64 : 136) + "px), transparent calc(100% - " + (m ? 40 : 112) + "px))",
+        WebkitMaskComposite: "source-in", maskComposite: "intersect",
       },
       aiStackStyle: { position: "relative", zIndex: 1, display: "flex", flexDirection: "column", gap: m ? 14 : 20, width: "100%" },
       /* Teil 1: three big cards side by side (stacked on mobile); preview on top, full bleed */
