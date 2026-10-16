@@ -111,7 +111,7 @@
       <!-- Kijimea capsules spilling from a blister (cut-out PNG from the user, turned 10° clockwise and re-cut straight at top and right): desktop = the blister slides out
            from under the navy bar (crisp top edge) and runs off the screen edge (crisp right edge), like the phone under the nav on kijimea.de;
            mobile = in the flow under the intro line, bleeding off the right edge, top edge softened (it does not touch the bar there) -->
-      <img src="assets/kijimea-kapseln.webp" alt="" width="961" height="512" decoding="async" class="hero-pills" style="{{ heroPillsStyle }}" />
+      <img src="assets/kijimea-kapselchaos.webp" alt="" width="1247" height="904" decoding="async" class="hero-pills" style="{{ heroPillsStyle }}" />
     </header>
 
     <section id="ueber-mich" aria-label="Kurz über mich" style="{{ aboutSectionStyle }}">
@@ -776,12 +776,12 @@ class Component extends DCLogic {
       heroIntroWrapStyle: { position: "relative" },
       /* capsules: top edge tucked under the navy bar (82px bar, top 81), right edge on the screen edge (also wider than 1440px) */
       heroPillsStyle: m ? {
-        display: "block", alignSelf: "flex-end", width: "74%", height: "auto",
+        display: "block", alignSelf: "flex-end", width: "90%", height: "auto",
         margin: "-8px -24px 0 0", pointerEvents: "none",
         WebkitMaskImage: "linear-gradient(to bottom, transparent 0, #000 20%)", maskImage: "linear-gradient(to bottom, transparent 0, #000 20%)",
       } : {
         position: "absolute", zIndex: 0, top: 81, right: "min(0px, calc((1440px - 100vw) / 2))", pointerEvents: "none",
-        width: "min(560px, 39vw)", height: "auto",
+        width: "min(700px, 48vw)", height: "auto",
       },
       /* Hero modelled on kijimea.de: full-width navy bar (white logo + nav), below it a light blue-grey band with kicker, headline, intro and the capsules.
          Both bands bleed to the screen edge via box-shadow + clip-path, so the 1440px page frame never shows as a hard edge on wide screens. */
@@ -790,6 +790,7 @@ class Component extends DCLogic {
         display: "flex", flexDirection: "column",
         gap: m ? 36 : 64,
         padding: m ? "0 24px 32px 24px" : "0 72px 72px 72px",
+        minHeight: m ? "auto" : "calc(81px + min(700px, 48vw) * 0.725 + 32px)", /* desktop: band tall enough for the capsule image (1247x904) plus 32px air below */
         backgroundColor: "var(--surface-sunken)",
         boxShadow: "0 0 0 100vmax var(--surface-sunken)", clipPath: "inset(0 -100vmax)",
       },
@@ -808,10 +809,10 @@ class Component extends DCLogic {
         fontFamily: font, fontWeight: 500, fontSize: m ? 15 : 17, lineHeight: 1.4,
         color: "#ffffff", /* white on navy 12:1 */
       },
-      heroTextStyle: { position: "relative", zIndex: 1, display: "flex", flexDirection: "column", gap: m ? 14 : 22, maxWidth: m ? 1200 : "calc(100% - min(560px, 39vw) + 72px)" }, /* desktop: text column stops where the capsules begin */
+      heroTextStyle: { position: "relative", zIndex: 1, display: "flex", flexDirection: "column", gap: m ? 14 : 22, marginTop: m ? 0 : "auto", marginBottom: m ? 0 : "auto", maxWidth: m ? 1200 : "calc(100% - min(560px, 39vw) + 72px)" }, /* desktop: text column stops where the capsules begin */
       heroLeadStyle: {
         fontFamily: font, fontWeight: 400, fontSize: m ? 17 : 20, lineHeight: 1.6,
-        color: bodyText, margin: m ? "6px 0 0 0" : "10px 0 0 0", maxWidth: 1200, textWrap: "balance", /* no orphan word when the line wraps */
+        color: bodyText, margin: m ? "6px 0 0 0" : "10px 0 0 0", maxWidth: m ? 1200 : 520, textWrap: "balance", /* desktop 520: wraps to two lines so it stays clear of the capsule image */ /* no orphan word when the line wraps */
       },
       heroKickerStyle: Object.assign({}, label, { fontSize: m ? 13 : 15 }),
       h1Style: Object.assign({}, headline, {
