@@ -94,6 +94,9 @@
     .footer-link:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
     /* hero intro line: below 1360px the column is narrower than the two-line layout, so let the browser balance the lines */
     @media (min-width: 860px) and (max-width: 1359px) { .hero-lead { text-wrap: balance !important; } }
+    /* very wide screens: the capsules sit at the screen edge while the text stays in the 1440px page frame; from 2240px there is room
+       for the whole intro line next to the capsules (text start to first capsule >= ~1100px), so it runs in one line right under the headline */
+    @media (min-width: 2240px) { .hero-lead { width: max-content; max-width: none !important; white-space: nowrap; } }
   </style>
 </helmet>
 <div style="{{ pageStyle }}">
