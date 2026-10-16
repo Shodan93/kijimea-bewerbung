@@ -863,7 +863,7 @@ class Component extends DCLogic {
       /* "Kurz über mich": large 4:5 portrait with a flat navy block offset behind it, copy left, key facts underneath */
       aboutSectionStyle: {
         display: "flex", flexDirection: "column", gap: m ? 32 : 56,
-        padding: m ? "44px 24px 64px 24px" : "60px 72px 88px 72px", /* even section rhythm (~104-124px between blocks) */
+        padding: m ? "44px 24px 64px 24px" : "80px 72px 120px 72px", /* desktop: 80 below the hero band, 120 before "Eigene Projekte" (section break > gaps inside the section) */
       },
       aboutStyle: {
         display: "flex", flexDirection: m ? "column" : "row",
@@ -923,7 +923,7 @@ class Component extends DCLogic {
         marginTop: m ? 8 : 0, /* mobile: 40px below the facts row; desktop: the row wrapper carries the 72px */
         justifyContent: "center", flex: m ? "0 0 auto" : "1 1 0", minWidth: 0, /* desktop: only as tall as its text, centred on the video tile */
       },
-      bezugRowStyle: m ? { display: "contents" } : { display: "flex", alignItems: "center", gap: 24, width: "100%", marginTop: 16 }, /* card keeps its own height, vertically centred next to the video */
+      bezugRowStyle: m ? { display: "contents" } : { display: "flex", alignItems: "center", gap: 24, width: "100%", marginTop: 56 }, /* 56 + 56 section gap = 112px of air above the video row */ /* card keeps its own height, vertically centred next to the video */
       bezugLabelStyle: label,
       bezugTextStyle: {
         fontFamily: font, fontWeight: 400, fontSize: m ? 16 : 22, lineHeight: 1.6, letterSpacing: "-0.01em", /* desktop 22px: the card sits next to the 439px video tile, larger text balances the two tiles */
