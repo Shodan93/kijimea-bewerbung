@@ -92,6 +92,8 @@
     .footer-link { color: #ffffff; text-decoration: none; }
     .footer-link:hover { color: #ffffff; text-decoration: underline; text-decoration-color: #ffffff; text-underline-offset: 4px; }
     .footer-link:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
+    /* hero intro line: below 1360px the column is narrower than the two-line layout, so let the browser balance the lines */
+    @media (min-width: 860px) and (max-width: 1359px) { .hero-lead { text-wrap: balance !important; } }
   </style>
 </helmet>
 <div style="{{ pageStyle }}">
@@ -106,7 +108,7 @@
       <div style="{{ heroTextStyle }}">
         <p style="{{ heroKickerStyle }}">Svenja Mumelter · Bewerbung als Senior Manager AI Content</p>
         <h1 style="{{ h1Style }}"><span style="{{ h1AccentStyle }}">Prompts bauen.</span> Workflows automatisieren. <em style="{{ h1EmStyle }}">Content skalieren.</em></h1>
-        <p style="{{ heroLeadStyle }}">Was ich dafür mitbringe und wie ich es bei Kijimea umsetzen würde.</p>
+        <p class="hero-lead" style="{{ heroLeadStyle }}">Was ich dafür mitbringe und wie ich KI&#8209;Content bei&nbsp;Kijimea skalierbar und qualitätsgesichert umsetzen würde.</p>
       </div>
       <!-- Kijimea capsules spilling from a blister (cut-out PNG from the user, turned 10° clockwise and re-cut straight at top and right): desktop = the blister slides out
            from under the navy bar (crisp top edge) and runs off the screen edge (crisp right edge), like the phone under the nav on kijimea.de;
@@ -458,7 +460,7 @@
         <span style="{{ footerNameStyle }}">Svenja Mumelter<span aria-hidden="true" style="{{ footerDotStyle }}">.</span></span>
         <p style="{{ footerAboutStyle }}">Konzept, Inhalt und Design aus einer Hand.</p>
       </div>
-      <div style="{{ footerBarLeftStyle }}"><span style="display:block">Private Bewerbungsseite von Svenja Mumelter, keine offizielle Seite von Kijimea.</span><span style="display:block">© 2026 · Logos und Markennamen gehören den jeweiligen Inhabern.</span></div>
+      <div style="{{ footerBarLeftStyle }}"><span style="display:block">Private Bewerbungsseite, keine offizielle Seite von Kijimea.</span><span style="display:block">© 2026 · Logos und Markennamen gehören den jeweiligen Inhabern.</span></div>
     </div>
     <div style="{{ footerPanelStyle }}">
       <svg style="{{ footerCurveDesktopStyle }}" viewBox="0 0 220 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
@@ -477,7 +479,7 @@
         </div>
       </div>
       <div style="{{ footerBarRightStyle }}">
-        <span style="{{ footerCopyMobileStyle }}"><span style="display:block">Private Bewerbungsseite von Svenja Mumelter, keine offizielle Seite von Kijimea.</span><span style="display:block">© 2026 · Logos und Markennamen gehören den jeweiligen Inhabern.</span></span>
+        <span style="{{ footerCopyMobileStyle }}"><span style="display:block">Private Bewerbungsseite, keine offizielle Seite von Kijimea.</span><span style="display:block">© 2026 · Logos und Markennamen gehören den jeweiligen Inhabern.</span></span>
         <span>Mit <svg width="13" height="13" viewBox="0 0 24 24" fill="#ffffff" role="img" aria-label="Liebe" style="{{ footerHeartStyle }}"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.2 0 3.6 1.2 5.2 3 1.6-1.8 3-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"></path></svg> und Claude Code gebaut in München</span>
       </div>
     </div>
@@ -841,7 +843,7 @@ class Component extends DCLogic {
       heroTextStyle: { position: "relative", zIndex: 1, display: "flex", flexDirection: "column", gap: m ? 14 : 22, marginTop: m ? 0 : "auto", marginBottom: m ? 0 : "auto", maxWidth: m ? 1200 : "calc(100% - min(560px, 39vw) + 72px)" }, /* desktop: text column stops where the capsules begin */
       heroLeadStyle: {
         fontFamily: font, fontWeight: 400, fontSize: m ? 17 : 20, lineHeight: 1.6,
-        color: bodyText, margin: m ? "6px 0 0 0" : "10px 0 0 0", maxWidth: m ? 1200 : 520, textWrap: "balance", /* desktop 520: wraps to two lines so it stays clear of the capsule image */ /* no orphan word when the line wraps */
+        color: bodyText, margin: m ? "6px 0 0 0" : "10px 0 0 0", maxWidth: m ? 1200 : "min(600px, calc(100vw - min(700px, 48vw) - 104px))", textWrap: m ? "balance" : "wrap", /* desktop: 600px gives exactly two lines, break after "bei Kijimea"; on narrower desktops the column shrinks so it never runs into the capsule image (balanced via .hero-lead) */
       },
       heroKickerStyle: Object.assign({}, label, { fontSize: m ? 13 : 15 }),
       h1Style: Object.assign({}, headline, {
