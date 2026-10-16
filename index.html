@@ -940,7 +940,8 @@ class Component extends DCLogic {
       animVideoStyle: {
         display: "block", width: "100%", height: "100%",
         objectFit: m ? "contain" : "cover", backgroundColor: "#182e50", /* desktop 4:3: cover trims only the empty navy at the sides; figures + bubble stay complete */
-        transform: "scale(1.12)", transformOrigin: "50% 50%",
+        objectPosition: m ? "50% 50%" : "35% 50%", /* desktop: crop window shifted left, so the figures sit a bit right of centre (more air left, less right) */
+        transform: m ? "scale(1.12)" : "scale(1.04)", transformOrigin: "50% 50%", /* desktop: only a hint of zoom so the figures have air around them; mobile keeps 12 % for a legible bubble */
       },
       factNumStyle: Object.assign({}, headline, {
         fontSize: m ? 34 : 42, lineHeight: 1.05, color: accent, whiteSpace: "nowrap",
