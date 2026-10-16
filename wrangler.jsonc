@@ -1,8 +1,12 @@
 {
   "name": "kijimea-bewerbung",
   "compatibility_date": "2026-10-01",
+  // worker.js only handles the MP4 (byte ranges for Safari); everything else is plain static assets
+  "main": "worker.js",
   "assets": {
-    "directory": "./"
+    "directory": "./",
+    "binding": "ASSETS",
+    "run_worker_first": ["/assets/*.mp4"]
   },
   "routes": [
     { "pattern": "kijimea-bewerbung.mumelter.org", "custom_domain": true }
