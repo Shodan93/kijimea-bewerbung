@@ -137,6 +137,8 @@
         <div style="{{ factStyle }}"><dt style="{{ factNumStyle }}">10+&nbsp;Jahre</dt><dd style="{{ factTextStyle }}">im selben Unternehmen, bis zur Filial- und Studioleitung</dd></div>
         <div style="{{ factStyle }}"><dt style="{{ factNumStyle }}">96&nbsp;%</dt><dd style="{{ factTextStyle }}">Abschlussergebnis als Applied E&#8209;Commerce Managerin</dd></div>
       </dl>
+      <!-- desktop: "Mein Bezug" card left + animation right as one two-tile row (like the "Beirat" tile on kijimea.de); mobile: wrapper is display:contents, so both stack as before -->
+      <div style="{{ bezugRowStyle }}">
       <aside aria-label="Mein Bezug zur Stelle" style="{{ bezugStyle }}">
         <span style="{{ bezugLabelStyle }}">Mein Bezug zur Stelle</span>
         <p style="{{ bezugTextStyle }}">Bildsprache habe ich von Grund auf <em style="{{ bezugEmStyle }}">gelernt.</em> Als Fotomedienfachfrau und Grafikdesignerin sehe ich schnell, ob ein Bild zu Marke, Kanal und Zielgruppe passt, egal ob fotografiert oder mit AI generiert.</p>
@@ -147,6 +149,7 @@
         <video id="kijimea-anim" src="assets/kijimea-animation.mp4" poster="assets/kijimea-animation-poster.jpg" width="1280" height="720"
                muted loop playsinline preload="none" disablepictureinpicture aria-label="Animation: eine Darm-Figur und eine Kijimea-Kapsel winken, Sprechblase „KI-Content? Svenja hat Ideen!“" style="{{ animVideoStyle }}"></video>
       </div></div>
+      </div>
     </section>
 
     <section id="ai-projekte" aria-labelledby="ai-title" style="{{ aiStyle }}">
@@ -914,26 +917,29 @@ class Component extends DCLogic {
         display: "flex", flexDirection: "column", gap: m ? 10 : 12, width: "100%", boxSizing: "border-box", /* full width like the facts row above; text runs in long lines */
         backgroundColor: "var(--surface-sunken)", borderRadius: 16, borderLeft: "4px solid var(--blue)",
         padding: m ? "24px 22px 26px 20px" : "34px 48px 36px 44px", /* more air inside so the card doesn't feel squeezed under the facts */
-        marginTop: m ? 8 : 16, /* 40 / 72px below the facts row instead of 32 / 56 */
+        marginTop: m ? 8 : 0, /* mobile: 40px below the facts row; desktop: the row wrapper carries the 72px */
+        justifyContent: "center", flex: m ? "0 0 auto" : "1 1 0", minWidth: 0, /* desktop: same height as the video tile, text vertically centred */
       },
+      bezugRowStyle: m ? { display: "contents" } : { display: "flex", alignItems: "stretch", gap: 24, width: "100%", marginTop: 16 },
       bezugLabelStyle: label,
       bezugTextStyle: {
-        fontFamily: font, fontWeight: 400, fontSize: m ? 16 : 18, lineHeight: 1.65, letterSpacing: "-0.01em",
+        fontFamily: font, fontWeight: 400, fontSize: m ? 16 : 22, lineHeight: 1.6, letterSpacing: "-0.01em", /* desktop 22px: the card sits next to the 439px video tile, larger text balances the two tiles */
         color: strong, margin: 0,
       },
       bezugEmStyle: { fontStyle: "italic", fontWeight: 700 },
       /* animation: centred, max 780px, 16:9 reserved up front (no layout shift); background = the video's own navy so nothing flashes while loading;
          same 16px radius as the other media on the page, no border or shadow. 16 / 8px extra on top = 72 / 40px below the "Mein Bezug" card */
-      animWrapStyle: { display: "flex", justifyContent: "center", width: "100%", marginTop: m ? 8 : 16 },
+      /* desktop: video tile on the right, same height as before (439px at 1440: 585 x 439 = 4:3), trimmed left/right where the frame is empty */
+      animWrapStyle: m ? { display: "flex", justifyContent: "center", width: "100%", marginTop: 8 } : { flex: "0 0 auto", width: "min(585px, 46%)", display: "flex" },
       /* frame keeps the box exactly as before (max 780px, 16:9, radius); the video inside is zoomed 12 % around its centre,
          so the same amount is trimmed on all four sides (figures and speech bubble keep plenty of margin: max safe zoom ~1.5) */
       animFrameStyle: {
-        width: "100%", maxWidth: 780, aspectRatio: "16 / 9", overflow: "hidden",
+        width: "100%", maxWidth: m ? 780 : "none", aspectRatio: m ? "16 / 9" : "4 / 3", overflow: "hidden",
         backgroundColor: "#182e50", borderRadius: m ? 12 : 16,
       },
       animVideoStyle: {
         display: "block", width: "100%", height: "100%",
-        objectFit: "contain", backgroundColor: "#182e50",
+        objectFit: m ? "contain" : "cover", backgroundColor: "#182e50", /* desktop 4:3: cover trims only the empty navy at the sides; figures + bubble stay complete */
         transform: "scale(1.12)", transformOrigin: "50% 50%",
       },
       factNumStyle: Object.assign({}, headline, {
