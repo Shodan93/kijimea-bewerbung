@@ -327,7 +327,7 @@
       <div style="{{ skillsHeadStyle }}">
         <p style="{{ ansatzQuoteStyle }}">„So würde ich bei euch starten.“</p>
         <h2 id="ansatz-title" style="{{ introH2Style }}"><span style="{{ h2AccentStyle }}">Von der ersten Idee</span> bis zum <em style="{{ h2EmStyle }}">skalierbaren Content.</em></h2>
-        <p style="{{ approachLeadStyle }}">Kijimea will bis 2028 die weltweit größte DTC-Probiotikamarke werden. Dafür braucht es viel Content für viele Kanäle, fachlich korrekt und im Ton der Marke. AI macht das skalierbar, wenn Prozesse, Prompts und Qualitätssicherung stimmen. Genau dort setze ich an:</p>
+        <p style="{{ ansatzLeadStyle }}">Kijimea will bis 2028 die weltweit größte DTC-Probiotikamarke werden. Dafür braucht es viel Content für viele Kanäle, fachlich korrekt und im Ton der Marke. AI macht das skalierbar, wenn Prozesse, Prompts und Qualitätssicherung stimmen. Genau dort setze ich an:</p>
       </div>
       <div style="{{ stepsWrapStyle }}">
         <div style="{{ stepsGridBgStyle }}" aria-hidden="true"></div>
@@ -971,6 +971,12 @@ class Component extends DCLogic {
       approachLeadStyle: {
         fontFamily: font, fontWeight: 400, fontSize: m ? 17 : 18, lineHeight: 1.6,
         color: bodyText, margin: m ? "4px 0 0 0" : "6px 0 0 0", maxWidth: 1000,
+      },
+      /* "So würde ich bei euch starten" intro: runs the full width of the three cards below, so its lines end flush with the last card */
+      ansatzLeadStyle: {
+        fontFamily: font, fontWeight: 400, fontSize: m ? 17 : 18, lineHeight: 1.6,
+        color: bodyText, margin: m ? "4px 0 0 0" : "6px 0 0 0", maxWidth: "none", textWrap: "pretty",
+        textAlign: m ? "left" : "justify", /* desktop: first line ends exactly at the last card's right edge (adds ~1-2px per word gap); mobile stays ragged */
       },
       /* tiles: white rounded cards on a faint, radially faded grid;
          big light-grey "01." numbers (decorative, aria-hidden), small icon chip, two-line title (regular + bold italic) */
