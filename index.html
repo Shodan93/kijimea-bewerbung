@@ -916,11 +916,11 @@ class Component extends DCLogic {
       bezugStyle: {
         display: "flex", flexDirection: "column", gap: m ? 10 : 12, width: "100%", boxSizing: "border-box", /* full width like the facts row above; text runs in long lines */
         backgroundColor: "var(--surface-sunken)", borderRadius: 16, borderLeft: "4px solid var(--blue)",
-        padding: m ? "24px 22px 26px 20px" : "34px 48px 36px 44px", /* more air inside so the card doesn't feel squeezed under the facts */
+        padding: m ? "24px 22px 26px 20px" : "40px 48px 42px 44px", /* more air inside so the card doesn't feel squeezed under the facts */
         marginTop: m ? 8 : 0, /* mobile: 40px below the facts row; desktop: the row wrapper carries the 72px */
-        justifyContent: "center", flex: m ? "0 0 auto" : "1 1 0", minWidth: 0, /* desktop: same height as the video tile, text vertically centred */
+        justifyContent: "center", flex: m ? "0 0 auto" : "1 1 0", minWidth: 0, /* desktop: only as tall as its text, centred on the video tile */
       },
-      bezugRowStyle: m ? { display: "contents" } : { display: "flex", alignItems: "stretch", gap: 24, width: "100%", marginTop: 16 },
+      bezugRowStyle: m ? { display: "contents" } : { display: "flex", alignItems: "center", gap: 24, width: "100%", marginTop: 16 }, /* card keeps its own height, vertically centred next to the video */
       bezugLabelStyle: label,
       bezugTextStyle: {
         fontFamily: font, fontWeight: 400, fontSize: m ? 16 : 22, lineHeight: 1.6, letterSpacing: "-0.01em", /* desktop 22px: the card sits next to the 439px video tile, larger text balances the two tiles */
