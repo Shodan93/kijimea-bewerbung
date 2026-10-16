@@ -102,7 +102,7 @@
 
     <header style="{{ heroStyle }}">
       <div style="{{ heroTopRowStyle }}">
-        <span style="{{ heroLogoStyle }}">Svenja Mumelter</span>
+        <img src="assets/kijimea-logo-weiss.svg" alt="Kijimea" width="132" height="38" style="{{ heroLogoStyle }}" />
         <nav aria-label="Inhalt" class="toc" style="{{ navStyle }}"><a href="#ueber-mich">Über mich</a><a href="#ai-projekte">AI-Projekte</a><a href="#skills">Skills</a><a href="#ansatz">Ansatz</a><a href="#einblicke">Mehr Einblicke</a><a href="#kontakt">Kontakt</a></nav>
       </div>
       <div style="{{ heroTextStyle }}">
@@ -814,7 +814,7 @@ class Component extends DCLogic {
         position: "absolute", zIndex: 0, top: 81, right: "min(0px, calc((1440px - 100vw) / 2))", pointerEvents: "none",
         width: "min(700px, 48vw)", height: "auto",
       },
-      /* Hero modelled on kijimea.de: full-width navy bar (white name + nav), below it a light blue-grey band with kicker, headline, intro and the capsules.
+      /* Hero modelled on kijimea.de: full-width navy bar (white logo + nav), below it a light blue-grey band with kicker, headline, intro and the capsules.
          Both bands bleed to the screen edge via box-shadow + clip-path, so the 1440px page frame never shows as a hard edge on wide screens. */
       heroStyle: {
         position: "relative", zIndex: 1,
@@ -833,11 +833,8 @@ class Component extends DCLogic {
         backgroundColor: "var(--ink-900)",
         boxShadow: "0 0 0 100vmax var(--ink-900)", clipPath: "inset(0 -100vmax)",
       },
-      /* the user's name top left in the nav font, white (no Kijimea logo anywhere on the page); the box keeps the former logo height so the bar stays 82px */
-      heroLogoStyle: {
-        display: "flex", alignItems: "center", height: m ? 30 : 38,
-        fontFamily: font, fontWeight: 500, fontSize: m ? 15 : 17, lineHeight: 1.4, color: "#ffffff", whiteSpace: "nowrap",
-      }, /* desktop bar: 22 + 38 + 22 = 82px */
+      /* Kijimea logo top left (white, as on kijimea.de); the user's own wordmark lives in the footer */
+      heroLogoStyle: { display: "block", height: m ? 30 : 38, width: "auto" }, /* desktop bar: 22 + 38 + 22 = 82px */
       navStyle: {
         display: "flex", flexWrap: "wrap", gap: m ? "6px 18px" : "8px 36px",
         fontFamily: font, fontWeight: 500, fontSize: m ? 15 : 17, lineHeight: 1.4,
